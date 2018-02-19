@@ -12,13 +12,10 @@ public class Config {
     public static void load() throws IOException {
         Properties propBot = new Properties();
 
-        BOT_NAME = "BotHyiBot";
-        BOT_ID = "425333637:AAHvD5BCGZ-6-P_5ydKualKbhABWT9BLMFc";
-
-//        try (InputStream in = new FileInputStream("E:/DEVELOPER/JAVA/JBotTelegram/res/bot.properties")) {
-//            propBot.load(in);
-//            BOT_NAME = propBot.getProperty("name");
-//            BOT_ID = propBot.getProperty("id");
-//        }
+        try (InputStream in = new FileInputStream("res/bot.properties")) {
+            propBot.load(in);
+            BOT_NAME = propBot.getProperty("name");
+            BOT_ID = propBot.getProperty("id");
+        }
     }
 }
