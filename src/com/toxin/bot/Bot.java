@@ -47,6 +47,7 @@ public class Bot extends TelegramLongPollingBot {
 
     private Random random = new Random();
 
+    private int count_photo = 10;
     private int secret = 0;
     private int count = 0;
     private int zaeb = 0;
@@ -84,7 +85,7 @@ public class Bot extends TelegramLongPollingBot {
             } else if (str.equals("/action")) {
                 sendText(message, "Команда отвалилась, приходите потом");
             } else if (str.toLowerCase().trim().startsWith("покажи")) {
-                File file = new File("res/photo.png");
+                File file = new File("res/image/photo_" + random.nextInt(count_photo) + ".png");
                 sendPhoto(message, file);
             } else if (str.matches("[Кк]то [а-яA-Я ]+\\?")) {
                 String call = str.substring(4, str.indexOf("?"));
@@ -146,7 +147,7 @@ public class Bot extends TelegramLongPollingBot {
             } else if (str.trim().toLowerCase().equals("крестики-нолики") && !isKn) {
                 knUpdate();
                 sendText(message, knString());
-            } else if (str.toLowerCase().toLowerCase().startsWith("x:y=") && isKn){
+            } else if (str.toLowerCase().toLowerCase().startsWith("x:y=") && isKn) {
                 str = str.toLowerCase().toLowerCase();
 
                 int x = Integer.parseInt(str.split("[:=]")[2]) - 1;
@@ -160,17 +161,17 @@ public class Bot extends TelegramLongPollingBot {
                     sendText(message, knString());
                     knUpdate();
                     sendText(message, kn_win);
-                }
-                else if (knCheck(2)) {
+                } else if (knCheck(2)) {
                     System.out.println("БЛЯ");
                     kn_win = "ТЫ ПРОИГРАЛ";
                     sendText(message, knString());
                     knUpdate();
                     sendText(message, kn_win);
-                }
-                else {
+                } else {
                     sendText(message, knString());
                 }
+            } else if (random.nextInt(10) == 0) {
+                sendText(message, Bla.getBlaString(str));
             } else {
                 sendText(message, Hyi.getHyiString(str));
             }
@@ -184,8 +185,8 @@ public class Bot extends TelegramLongPollingBot {
 
     private boolean isAnswer(String str) {
         str = str.toLowerCase().trim();
-        for (String ans : faq) {
-            if (ans.contains(str)) {
+        for (String ans : str.split(" ")) {
+            if (faq.contains(ans)) {
                 return true;
             }
         }
