@@ -7,25 +7,28 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 
-public class Bot extends TelegramLongPollingBot{
+public class Bot extends TelegramLongPollingBot {
     private static final Logger log = Logger.getLogger(Bot.class);
 
     private final static String MESSAGE_NOT_SEND = "MESSAGE NOT SEND";
 
     public final static Bot INSTANCE = new Bot();
 
-    public KeyBoard keyBoard;
+    private KeyBoard keyBoard;
 
     private Bot() {
-        //NOTHING
         this.keyBoard = new KeyBoard();
     }
 
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage()) {
-            String message = update.getMessage().getText();
-            send(update.getMessage().getChatId().toString(), message);
+            String text = update.getMessage().getText();
+            String chatID = update.getMessage().getChatId().toString();
+
+            log.info("GETTER: ID=" + chatID + " TEXT=" + text);
+            send(chatID, text);
+
         } else if (update.hasCallbackQuery()) {
             System.out.println(update.getCallbackQuery());
         }

@@ -1,9 +1,15 @@
 package com.toxin.bot;
 
 public class Hyi {
+
+    private final static String HU = "Ху";
+
     public static String getHyiString(String orig) {
         String word = convertToWord(orig);
         word = deleteFirst(word);
+
+        if (word.length() <= 2)
+            return HU + word;
 
         while (!isGlas(word.charAt(0))) {
             word = deleteFirst(word);
@@ -41,11 +47,12 @@ public class Hyi {
                 return true;
             }
         }
+
         return false;
     }
 
     private static String getHyi(char tmp) {
-        String hu = "Ху";
+        String hu = HU;
 
         if (tmp == 'а' || tmp == 'я') {
             hu += 'я';
@@ -55,7 +62,7 @@ public class Hyi {
             hu += 'ё';
         } else if (tmp == 'ы' || tmp == 'и') {
             hu += 'и';
-        }else if (tmp == 'е' || tmp == 'э') {
+        } else if (tmp == 'е' || tmp == 'э') {
             hu += 'е';
         } else if (tmp == 'й') {
             hu += 'й';
@@ -63,4 +70,5 @@ public class Hyi {
 
         return hu;
     }
+
 }
