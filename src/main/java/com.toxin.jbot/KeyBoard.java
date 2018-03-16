@@ -1,4 +1,4 @@
-package com.toxin.bot;
+package com.toxin.jbot;
 
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;

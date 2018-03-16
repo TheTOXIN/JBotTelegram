@@ -1,4 +1,4 @@
-package com.toxin.bot;
+package com.toxin.jbot;
 
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.api.methods.send.SendMessage;

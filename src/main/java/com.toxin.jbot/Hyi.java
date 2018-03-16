@@ -1,4 +1,4 @@
-package com.toxin.bot;
+package com.toxin.jbot;
 
 public class Hyi {
 
