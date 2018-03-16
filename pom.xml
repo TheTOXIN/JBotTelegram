@@ -46,7 +46,7 @@
                     <programs>
                         <program>
                             <mainClass>com.toxin.jbot.Main</mainClass>
-                            <name>bot</name>
+                            <name>jbot</name>
                         </program>
                     </programs>
                 </configuration>
