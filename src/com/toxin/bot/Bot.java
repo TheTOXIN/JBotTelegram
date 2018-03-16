@@ -14,22 +14,29 @@ public class Bot extends TelegramLongPollingBot{
 
     public final static Bot INSTANCE = new Bot();
 
+    public KeyBoard keyBoard;
+
     private Bot() {
         //NOTHING
+        this.keyBoard = new KeyBoard();
     }
 
     @Override
     public void onUpdateReceived(Update update) {
-        String message = update.getMessage().getText();
-        send(update.getMessage().getChatId().toString(), message);
+        if (update.hasMessage()) {
+            String message = update.getMessage().getText();
+            send(update.getMessage().getChatId().toString(), message);
+        } else if (update.hasCallbackQuery()) {
+            System.out.println(update.getCallbackQuery());
+        }
     }
 
-    private void send(String chatID, String message) {
+    private void send(String chatID, String text) {
         SendMessage sendMessage = new SendMessage();
 
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatID);
-        sendMessage.setText(message);
+        sendMessage.setText(Hyi.getHyiString(text));
 
         try {
             sendMessage(sendMessage);
