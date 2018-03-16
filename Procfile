@@ -1,1 +1,1 @@
-worker: sh target/bin/bot
+worker: java -jar target/bot-1.0-SNAPSHOT.jar com.toxin.bot.Main
