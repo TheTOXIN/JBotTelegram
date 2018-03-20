@@ -42,7 +42,8 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     private void process(String chatID, String text) {
-        if (text.toLowerCase().contains("мем")) {
+        text = text.toLowerCase();
+        if (text.contains("мем") || text.contains("mem")) {
             sendPhoto(chatID, Memator.getMem());
         } else {
             sendMessage(chatID, Hyi.getHyiString(text));

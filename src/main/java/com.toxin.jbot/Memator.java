@@ -12,13 +12,12 @@ public class Memator {
     private static final String SOURCE = "http://pikchi.net";
     private static final String PATH = "/random.html";
     private static final String KEY_WORDS = "/uploads";
-    private static final String RES = "src/main/resources/img/";
+    private static final String RES = "src/main/resources/img/mem.jpg";
 
     private static final Random RANDOM = new Random();
 
     public static File getMem() {
         try {
-
             URL url = new URL(SOURCE + PATH);
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -37,10 +36,13 @@ public class Memator {
                 }
             }
 
+            Files.deleteIfExists(Paths.get(RES));
+
             try(InputStream in = new URL(link).openStream()) {
-                Files.copy(in, Paths.get(RES + "mem_" + RANDOM.nextInt(1000) + ".jpg"));
+                Files.copy(in, Paths.get(RES));
             }
 
+            connection.disconnect();
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
