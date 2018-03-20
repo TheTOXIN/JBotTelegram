@@ -2,9 +2,12 @@ package com.toxin.jbot;
 
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
+import org.telegram.telegrambots.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
+
+import java.io.File;
 
 
 public class Bot extends TelegramLongPollingBot {
@@ -35,16 +38,40 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     private void send(String chatID, String text) {
+        process(chatID, text);
+    }
+
+    private void process(String chatID, String text) {
+        if (text.toLowerCase().contains("мем")) {
+            sendPhoto(chatID, Memator.getMem());
+        } else {
+            sendMessage(chatID, Hyi.getHyiString(text));
+        }
+    }
+
+    private void sendMessage(String chatID, String text) {
         SendMessage sendMessage = new SendMessage();
 
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatID);
-        sendMessage.setText(Hyi.getHyiString(text));
+
+        sendMessage.setText(text);
 
         try {
             sendMessage(sendMessage);
         } catch (TelegramApiException e) {
             log.error(MESSAGE_NOT_SEND);
+        }
+    }
+
+    private void sendPhoto(String chatID, File file) {
+        SendPhoto sendPhoto = new SendPhoto();
+        sendPhoto.setChatId(chatID);
+        sendPhoto.setNewPhoto(file);
+        try {
+            sendPhoto(sendPhoto);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
         }
     }
 
