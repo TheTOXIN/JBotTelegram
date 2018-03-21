@@ -45,6 +45,8 @@ public class Bot extends TelegramLongPollingBot {
         text = text.toLowerCase();
         if (text.contains("мем") || text.contains("mem")) {
             sendPhoto(chatID, Memator.getMem());
+        } else if (text.startsWith("бот")) {
+            sendMessage(chatID, AI.getAnswer(text));
         } else {
             sendMessage(chatID, Hyi.getHyiString(text));
         }

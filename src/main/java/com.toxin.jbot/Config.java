@@ -8,6 +8,7 @@ import java.util.Properties;
 public class Config {
     public static String BOT_NAME;
     public static String BOT_TOKEN;
+    public static String BOT_AI;
 
     public static void load() throws IOException {
         Properties propBot = new Properties();
@@ -16,6 +17,7 @@ public class Config {
             propBot.load(in);
             BOT_NAME = propBot.getProperty("name");
             BOT_TOKEN = propBot.getProperty("token");
+            BOT_AI = propBot.getProperty("ai");
         }
     }
 }
