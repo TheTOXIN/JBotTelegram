@@ -3,11 +3,14 @@ package com.toxin.jbot;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.send.SendPhoto;
+import org.telegram.telegrambots.api.objects.Message;
+import org.telegram.telegrambots.api.objects.PhotoSize;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import java.io.File;
+import java.util.List;
 
 
 public class Bot extends TelegramLongPollingBot {
@@ -26,23 +29,31 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage()) {
-            String text = update.getMessage().getText();
-            String chatID = update.getMessage().getChatId().toString();
-
-            log.info("GETTER: ID=" + chatID + " TEXT=" + text);
-            send(chatID, text);
-
+            process(update.getMessage());
         } else if (update.hasCallbackQuery()) {
             System.out.println(update.getCallbackQuery());
         }
     }
 
-    private void send(String chatID, String text) {
-        process(chatID, text);
+    private void process(Message message) {
+        String chatID = message.getChatId().toString();
+
+        String text = message.getText();
+        if (!text.equals("") && !text.isEmpty()) {
+            log.info("GETTER: ID=" + chatID + " TEXT=" + text);
+            send(chatID, text);
+        }
+
+        List<PhotoSize> photo = message.getPhoto();
+        if (photo != null) {
+            log.info("GETTER: ID=" + chatID + " PHOTO_size=" + photo.size());
+            //TODO
+        }
     }
 
-    private void process(String chatID, String text) {
+    private void send(String chatID, String text) {
         text = text.toLowerCase();
+
         if (text.contains("мем") || text.contains("mem")) {
             sendPhoto(chatID, Memator.getMem());
         } else if (text.startsWith("бот")) {
