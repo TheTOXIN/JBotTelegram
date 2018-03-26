@@ -39,15 +39,16 @@ public class Bot extends TelegramLongPollingBot {
         String chatID = message.getChatId().toString();
 
         String text = message.getText();
-        if (!text.equals("") && !text.isEmpty()) {
+        if (text != null && !text.equals("") && !text.isEmpty()) {
             log.info("GETTER: ID=" + chatID + " TEXT=" + text);
             send(chatID, text);
         }
 
-        List<PhotoSize> photo = message.getPhoto();
-        if (photo != null) {
-            log.info("GETTER: ID=" + chatID + " PHOTO_size=" + photo.size());
-            //TODO
+        List<PhotoSize> photoList = message.getPhoto();
+        if (photoList != null) {
+            PhotoSize photo = photoList.get(0);
+            log.info("GETTER: ID=" + chatID + " PHOTO=" + photo.getFilePath() + " id=" + photo.getFileId());
+            //Util.loadImage(url, "render.png");
         }
     }
 

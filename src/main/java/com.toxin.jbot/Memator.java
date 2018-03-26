@@ -12,7 +12,7 @@ public class Memator {
 
     private static final String SOURCE = "http://www.1001mem.ru";
     private static final String KEY_WORDS = "img.1001mem.ru/posts/";
-    private static final String RES = "src/main/resources/img/mem.jpg";
+    private static final String NAME = "mem.jpg";
 
     private static final Random RANDOM = new Random();
 
@@ -38,7 +38,7 @@ public class Memator {
             }
 
             link = parseToLink(links.get(RANDOM.nextInt(links.size())));
-            updateFile(link);
+            Util.loadImage(link, NAME);
 
             connection.disconnect();
             reader.close();
@@ -46,7 +46,7 @@ public class Memator {
             e.printStackTrace();
         }
 
-        return new File(RES);
+        return new File(Util.RES + NAME);
     }
 
     private static String parseToLink(String str) {
@@ -54,14 +54,6 @@ public class Memator {
         int to = str.indexOf("\"", from);
 
         return str.substring(from, to);
-    }
-
-    private static void updateFile(String link) throws IOException {
-        Files.deleteIfExists(Paths.get(RES));
-
-        try(InputStream in = new URL(link).openStream()) {
-            Files.copy(in, Paths.get(RES));
-        }
     }
 
 }
