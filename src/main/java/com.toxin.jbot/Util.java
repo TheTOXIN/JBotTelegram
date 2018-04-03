@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Util {
+
     public final static String RES = "src/main/resources/img/";
 
     public static void loadImage(String url, String name) {

@@ -1,6 +1,7 @@
 package com.toxin.jbot;
 
 import org.apache.log4j.Logger;
+import org.telegram.telegrambots.api.methods.GetFile;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.api.objects.Message;
@@ -48,7 +49,15 @@ public class Bot extends TelegramLongPollingBot {
         if (photoList != null) {
             PhotoSize photo = photoList.get(0);
             log.info("GETTER: ID=" + chatID + " PHOTO=" + photo.getFilePath() + " id=" + photo.getFileId());
-            //Util.loadImage(url, "render.png");
+
+            try {
+                GetFile file = new GetFile().setFileId(photo.getFileId());
+                String url = super.getFile(file).getFileUrl(getBotToken());
+                Util.loadImage(url, "before.png");
+                Render.render(new File(Util.RES + "after.png"));
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
         }
     }
 
