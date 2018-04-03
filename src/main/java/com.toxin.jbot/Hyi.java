@@ -6,10 +6,15 @@ public class Hyi {
 
     public static String getHyiString(String orig) {
         String word = convertToWord(orig);
-        word = deleteFirst(word);
 
         if (word.length() <= 2)
             return HU + word;
+
+        if (isGlas(word.charAt(0))) {
+            word = word.charAt(0) + word;
+        } else {
+            word = deleteFirst(word);
+        }
 
         while (!isGlas(word.charAt(0))) {
             word = deleteFirst(word);
