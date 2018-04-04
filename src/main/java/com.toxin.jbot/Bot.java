@@ -53,8 +53,9 @@ public class Bot extends TelegramLongPollingBot {
             try {
                 GetFile file = new GetFile().setFileId(photo.getFileId());
                 String url = super.getFile(file).getFileUrl(getBotToken());
-                Util.loadImage(url, "before.png");
-                Render.render(new File(Util.RES + "after.png"));
+                Util.downloadImage(url, Render.name);
+                File render = Render.render(new File(Util.RES + Render.name));
+                sendPhoto(chatID, render);
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }

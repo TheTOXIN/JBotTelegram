@@ -5,35 +5,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
 public class Render {
 
-    private static final List<String> bacicRGB = Arrays.asList(
-        "#000000",
-        "#FFFFFF",
-        "#FF0000",
-        "#00FF00",
-        "#0000FF",
-        "#FFFF00",
-        "#00FFFF",
-        "#FF00FF",
-        "#C0C0C0",
-        "#808080",
-        "#800000",
-        "#808000",
-        "#008000",
-        "#800080",
-        "#008080",
-        "#000080"
-    );
-
-    static {
-        bacicRGB.sort(String::compareTo);
-    }
+    public static final String name = "render.png";
 
     public static File render(File file) {
+
         try {
             BufferedImage image = ImageIO.read(file);
 
@@ -46,41 +24,50 @@ public class Render {
                 }
             }
 
-            ImageIO.write(image, "png", new File(Util.RES + "after.png"));
+            ImageIO.write(image, "png", file);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return null;
+        return file;
     }
 
     private static int inverse(int pixel) {
-        Color c = new Color(pixel);
+        Color oldColor = new Color(pixel);
 
-        String s = String.format("#%02x%02x%02x", c.getRed(), c.getGreen(), c.getGreen());
+        int R = rude(oldColor.getRed());
+        int G = rude(oldColor.getGreen());
+        int B = rude(oldColor.getBlue());
 
-        for (int i = 0; i < bacicRGB.size() - 1; i++) {
-            String min = bacicRGB.get(i);
-            String max = bacicRGB.get(i);
-            String hex = s.toUpperCase();
-            System.out.println("HEX=" + hex + " MIN" + min + " MAX" + max);
-            if (beetween(hex, min, max)) {
-                c = Color.decode(bacicRGB.get(i));
+        Color newColor = new Color(R, G, B);
+
+        return newColor.getRGB();
+    }
+
+    private static int rude(int tune) {
+        int min = 0;
+        int max = 255;
+
+        if (tune <= min || tune >= max)
+            return tune;
+
+        int k = Util.rand.nextInt(max);
+        int res = 0;
+
+        int[] split = new int[k];
+
+        for (int i = split.length; i > 0; i--) {
+            split[split.length - i] = max / i;
+        }
+
+        for (int i = 0; i < split.length; i++) {
+            if (tune <= split[i]) {
+                res = split[i];
+                break;
             }
         }
 
-        return c.getRGB();
-    }
-
-    private static boolean beetween(String hex, String min, String max) {
-        return
-            (hex.compareTo(min) > 0 || hex.compareTo(min) == 0)
-            &&
-            (hex.compareTo(max) < 0 || hex.compareTo(max) == 0);
-    }
-
-    public static void main(String[] args) {
-        render(new File(Util.RES + "before.png"));
+        return res;
     }
 
 }

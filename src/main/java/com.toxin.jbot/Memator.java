@@ -3,8 +3,6 @@ package com.toxin.jbot;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -38,7 +36,7 @@ public class Memator {
             }
 
             link = parseToLink(links.get(RANDOM.nextInt(links.size())));
-            Util.loadImage(link, NAME);
+            Util.downloadImage(link, NAME);
 
             connection.disconnect();
             reader.close();
