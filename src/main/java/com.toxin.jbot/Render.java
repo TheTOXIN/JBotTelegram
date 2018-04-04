@@ -62,7 +62,7 @@ public class Render {
         if (tune <= min || tune >= max)
             return tune;
 
-        int count = 2;
+        int count = 2;//NOT SET VALUE 1
         int interval = max / (count - 1);
         int res = 0;
 
@@ -87,12 +87,6 @@ public class Render {
         }
 
         return res;
-    }
-
-    public static void main(String[] args) {
-        String url = "https://pp.userapi.com/c824502/v824502045/f05d8/e1DLRdfmpP0.jpg";
-        Util.downloadImage(url, NAME);
-        render(new File(Util.RES + NAME));
     }
 
 }
