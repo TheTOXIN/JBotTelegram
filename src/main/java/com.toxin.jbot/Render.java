@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class Render {
 
-    public static final String name = "render.png";
+    public static final String NAME = "render.png";
 
     public static File render(File file) {
 
@@ -44,6 +44,17 @@ public class Render {
         return newColor.getRGB();
     }
 
+    /**
+     * @param tune max = 255 | min = 0
+     *
+     * interval = max / (k - 1)
+     * c = 2 |0; 255|
+     * c = 3 |0; 127; 255|
+     * c = 4 |0; 85; 170; 255|
+     * c = n |i * interval|
+     *
+     * @return res = tune <= (ni + ni+1 / 2)
+     */
     private static int rude(int tune) {
         int min = 0;
         int max = 255;
@@ -51,23 +62,37 @@ public class Render {
         if (tune <= min || tune >= max)
             return tune;
 
-        int k = Util.rand.nextInt(max);
+        int count = 2;
+        int interval = max / (count - 1);
         int res = 0;
 
-        int[] split = new int[k];
+        int[] split = new int[count];
 
-        for (int i = split.length; i > 0; i--) {
-            split[split.length - i] = max / i;
+        split[0] = 0;
+        for (int i = 1; i < split.length; i++) {
+            split[i] = i * interval;
         }
 
-        for (int i = 0; i < split.length; i++) {
-            if (tune <= split[i]) {
-                res = split[i];
-                break;
+        for (int i = 0; i < split.length - 1; i++) {
+            int s1 = split[i];
+            int s2 = split[i + 1];
+            if (s1 <= tune && tune <= s2) {
+                int avg = (s1 + s2) / 2;
+                if (tune <= avg) {
+                    res = s1;
+                } else {
+                    res = s2;
+                }
             }
         }
 
         return res;
+    }
+
+    public static void main(String[] args) {
+        String url = "https://pp.userapi.com/c824502/v824502045/f05d8/e1DLRdfmpP0.jpg";
+        Util.downloadImage(url, NAME);
+        render(new File(Util.RES + NAME));
     }
 
 }
