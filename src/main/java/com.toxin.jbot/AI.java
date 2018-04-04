@@ -12,7 +12,7 @@ public class AI {
         String answer = "";
         text = refactor(text);
 
-        if (!text.contains(" ") || text.equals("") || text.isEmpty()) {
+        if (text.equals("") || text.isEmpty()) {
             return answer;
         }
 
