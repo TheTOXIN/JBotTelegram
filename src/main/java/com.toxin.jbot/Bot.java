@@ -80,7 +80,8 @@ public class Bot extends TelegramLongPollingBot {
         } else if (text.startsWith("бот")) {
             sendMessage(chatID, AI.getAnswer(text));
         } else {
-            sendMessage(chatID, Hyi.getHyiString(text));
+            String answer = Util.rand.nextInt(2) == 1 ? Hyi.getHyiString(text) : Bla.getBlaString(text);
+            sendMessage(chatID, answer);
         }
     }
 
