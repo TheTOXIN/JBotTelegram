@@ -1,3 +1,3 @@
 # JBotTelegram
 
-Just example bot telegram
+Just example bot telegram on Java
