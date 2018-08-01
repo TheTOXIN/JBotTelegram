@@ -4,29 +4,21 @@ import java.util.ArrayList;
 
 public class Settings {
 
-    private ArrayList<String> mockId = new ArrayList<>();
+    private ArrayList<String> chatId = new ArrayList<>();
 
     public Settings() {
     }
 
-    public ArrayList<String> getMockId() {
-        return mockId;
+    public void addChat(String id) {
+        chatId.add(id);
     }
 
-    public void setMockId(ArrayList<String> mockId) {
-        this.mockId = mockId;
+    public void removeChat(String id) {
+        chatId.remove(id);
     }
 
-    public void addMock(String id) {
-        mockId.add(id);
-    }
-
-    public void removeMock(String id) {
-        mockId.remove(id);
-    }
-
-    public boolean isMock(String id) {
-        return mockId.contains(id);
+    public boolean isChatMock(String id) {
+        return !chatId.contains(id);
     }
 
 }

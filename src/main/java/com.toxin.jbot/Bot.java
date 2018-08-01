@@ -64,16 +64,16 @@ public class Bot extends TelegramLongPollingBot {
         text = text.toLowerCase();
 
         if (text.contains("off")) {
-            set.addMock(chatID);
+            set.removeChat(chatID);
             sendMessage(chatID, "Еще увидимся...");
             return;
         } else if (text.contains("on")) {
-            set.removeMock(chatID);
+            set.addChat(chatID);
             sendMessage(chatID, "Я вернулся сучки!!!");
             return;
         }
 
-        if (set.isMock(chatID)) return;
+        if (set.isChatMock(chatID)) return;
 
         if (text.contains("мем") || text.contains("mem")) {
             sendPhoto(chatID, Memator.getMem());
