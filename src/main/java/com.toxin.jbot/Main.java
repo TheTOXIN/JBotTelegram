@@ -5,9 +5,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("-=JAVA TELEGRAM BOT START=-");
 
-        Initializer initer = new Initializer();
+        Initializer init = new Initializer();
 
-        initer.init();
+        init.init();
     }
 
 }
