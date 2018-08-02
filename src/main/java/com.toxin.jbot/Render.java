@@ -1,5 +1,7 @@
 package com.toxin.jbot;
 
+import org.apache.log4j.Logger;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -7,6 +9,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class Render {
+
+    private static final Logger log = Logger.getLogger(Render.class);
 
     public static final String NAME = "render.png";
 
@@ -26,7 +30,7 @@ public class Render {
 
             ImageIO.write(image, "png", file);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("IO - " + file.getAbsolutePath() + " - error open");
         }
 
         return file;

@@ -10,8 +10,8 @@ import java.io.IOException;
 public class Initializer {
     private final Logger log = Logger.getLogger(Initializer.class);
 
-    private final static String CONFIG_NOT_FOUND = "CONFIG NOT FOUND";
-    private final static String BOT_NOT_REGISTER = "BOT NOT REGISTER";
+    private static final String CONFIG_NOT_FOUND = "CONFIG NOT FOUND";
+    private static final String BOT_NOT_REGISTER = "BOT NOT REGISTER";
 
     public void init() {
         loadConfig();

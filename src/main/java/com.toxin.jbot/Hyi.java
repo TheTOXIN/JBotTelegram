@@ -2,7 +2,7 @@ package com.toxin.jbot;
 
 public class Hyi {
 
-    private final static String HU = "Ху";
+    private static final String HU = "Ху";
 
     public static String getHyiString(String orig) {
         String word = convertToWord(orig);
@@ -35,9 +35,11 @@ public class Hyi {
 
     private static String convertToWord(String str) {
         String word = str.split(" ")[str.split(" ").length - 1];
-        word.replaceAll("\\d", "");
-        word.replaceAll("[^\\w]", "");
-        word.toLowerCase();
+
+        word = word.replaceAll("\\d", "");
+        word = word.replaceAll("[^\\w]", "");
+        word = word.toLowerCase();
+
         return word;
     }
 

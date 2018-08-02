@@ -18,13 +18,11 @@ import java.util.List;
 public class Bot extends TelegramLongPollingBot {
     private static final Logger log = Logger.getLogger(Bot.class);
 
-    public final static Bot INSTANCE = new Bot();
+    public static final Bot INSTANCE = new Bot();
 
-    private KeyBoard keyBoard;
     private Settings set;
 
     private Bot() {
-        this.keyBoard = new KeyBoard();
         this.set = new Settings();
     }
 
