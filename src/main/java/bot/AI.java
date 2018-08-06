@@ -1,4 +1,4 @@
-package com.toxin.jbot;
+package com.toxin.bot;
 
 import ai.api.AIConfiguration;
 import ai.api.AIDataService;

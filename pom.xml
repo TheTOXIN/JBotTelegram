@@ -51,7 +51,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>com.toxin.jbot.Main</mainClass>
+                            <mainClass>com.toxin.bot.Main</mainClass>
                             <name>jbot</name>
                         </program>
                     </programs>
