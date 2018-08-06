@@ -16,6 +16,10 @@ public class Bot extends TelegramLongPollingBot {
 
     private Settings set;
 
+    public Bot() {
+        this.set = new Settings();
+    }
+
     public Bot(DefaultBotOptions options) {
         super(options);
         this.set = new Settings();
@@ -26,7 +30,7 @@ public class Bot extends TelegramLongPollingBot {
         if (update.hasMessage()) {
             process(update.getMessage());
         } else if (update.hasCallbackQuery()) {
-            System.out.println(update.getCallbackQuery());
+           log.info(update.getCallbackQuery());
         }
     }
 
@@ -55,6 +59,7 @@ public class Bot extends TelegramLongPollingBot {
 
     private void processText(String chatID, String text) {
         text = text.toLowerCase();
+        text = text.replaceAll("\\s+", " ");
 
         if (text.contains("off")) {
             set.removeChat(chatID);
@@ -72,6 +77,8 @@ public class Bot extends TelegramLongPollingBot {
             sendPhoto(chatID, Memator.getMem());
         } else if (text.startsWith("бот")) {
             sendMessage(chatID, AI.getAnswer(text));
+        } else if (text.contains(Prediction.KEY_WORD)) {
+            sendMessage(chatID, Prediction.getForecast(text));
         } else {
             String answer = Util.rand.nextInt(2) == 1 ? Hyi.getHyiString(text) : Bla.getBlaString(text);
             sendMessage(chatID, answer);

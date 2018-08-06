@@ -30,11 +30,11 @@ public class Initializer {
 
     private void runBot() {
         ApiContextInitializer.init();
-        DefaultBotOptions options = getOptions();
         TelegramBotsApi botsApi = new TelegramBotsApi();
 
         try {
-            botsApi.registerBot(new Bot(options));
+            if (Config.PROXY_WORK) botsApi.registerBot(new Bot(getOptions()));
+            else botsApi.registerBot(new Bot());
         } catch (TelegramApiRequestException e) {
             log.error(BOT_NOT_REGISTER);
         }

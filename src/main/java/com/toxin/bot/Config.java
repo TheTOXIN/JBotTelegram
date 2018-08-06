@@ -9,6 +9,7 @@ public class Config {
     public static String BOT_NAME;
     public static String BOT_TOKEN;
     public static String BOT_AI;
+    public static boolean PROXY_WORK;
     public static String PROXY_HOST;
     public static String PROXY_PORT;
 
@@ -20,8 +21,11 @@ public class Config {
             BOT_NAME = propBot.getProperty("bot.name");
             BOT_TOKEN = propBot.getProperty("bot.token");
             BOT_AI = propBot.getProperty("bot.ai");
-            PROXY_HOST = propBot.getProperty("proxy.host");
-            PROXY_PORT = propBot.getProperty("proxy.port");
+            PROXY_WORK = Boolean.valueOf(propBot.getProperty("proxy.work"));
+            if (PROXY_WORK) {
+                PROXY_HOST = propBot.getProperty("proxy.host");
+                PROXY_PORT = propBot.getProperty("proxy.port");
+            }
         }
     }
 }
