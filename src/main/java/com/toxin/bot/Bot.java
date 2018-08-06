@@ -15,14 +15,17 @@ public class Bot extends TelegramLongPollingBot {
     private static final Logger log = Logger.getLogger(Bot.class);
 
     private Settings set;
+    private MoreOrLess moreOrLess;
 
     public Bot() {
         this.set = new Settings();
+        this.moreOrLess = new MoreOrLess();
     }
 
     public Bot(DefaultBotOptions options) {
         super(options);
         this.set = new Settings();
+        this.moreOrLess = new MoreOrLess();
     }
 
     @Override
@@ -79,6 +82,8 @@ public class Bot extends TelegramLongPollingBot {
             sendMessage(chatID, AI.getAnswer(text));
         } else if (text.contains(Prediction.KEY_WORD)) {
             sendMessage(chatID, Prediction.getForecast(text));
+        } else if (text.contains(MoreOrLess.KEY_WORD_START) || text.contains(MoreOrLess.KEY_WORD_ANSWER)) {
+            sendMessage(chatID, this.moreOrLess.processGame(text));
         } else {
             String answer = Util.rand.nextInt(2) == 1 ? Hyi.getHyiString(text) : Bla.getBlaString(text);
             sendMessage(chatID, answer);
