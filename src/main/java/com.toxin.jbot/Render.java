@@ -14,7 +14,8 @@ public class Render {
 
     public static final String NAME = "render.png";
 
-    public static File render(File file) {
+    public static File render(String path) {
+        File file = new File(path);
 
         try {
             BufferedImage image = ImageIO.read(file);

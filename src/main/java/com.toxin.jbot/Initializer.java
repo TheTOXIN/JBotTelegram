@@ -2,8 +2,10 @@ package com.toxin.jbot;
 
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.ApiContextInitializer;
-import org.telegram.telegrambots.TelegramBotsApi;
-import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
+import org.telegram.telegrambots.bots.DefaultBotOptions;
+import org.telegram.telegrambots.meta.ApiContext;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
 import java.io.IOException;
 
@@ -28,13 +30,24 @@ public class Initializer {
 
     private void runBot() {
         ApiContextInitializer.init();
+        DefaultBotOptions options = getOptions();
         TelegramBotsApi botsApi = new TelegramBotsApi();
 
         try {
-            botsApi.registerBot(Bot.INSTANCE);
+            botsApi.registerBot(new Bot(options));
         } catch (TelegramApiRequestException e) {
             log.error(BOT_NOT_REGISTER);
         }
+    }
+
+    private DefaultBotOptions getOptions() {
+        DefaultBotOptions options = ApiContext.getInstance(DefaultBotOptions.class);
+
+        options.setProxyHost(Config.PROXY_HOST);
+        options.setProxyPort(Integer.parseInt(Config.PROXY_PORT));
+        options.setProxyType(DefaultBotOptions.ProxyType.SOCKS5);
+
+        return options;
     }
 
 }

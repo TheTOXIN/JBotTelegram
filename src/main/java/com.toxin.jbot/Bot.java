@@ -1,28 +1,23 @@
 package com.toxin.jbot;
 
 import org.apache.log4j.Logger;
-import org.telegram.telegrambots.api.methods.GetFile;
-import org.telegram.telegrambots.api.methods.send.SendMessage;
-import org.telegram.telegrambots.api.methods.send.SendPhoto;
-import org.telegram.telegrambots.api.objects.Document;
-import org.telegram.telegrambots.api.objects.Message;
-import org.telegram.telegrambots.api.objects.PhotoSize;
-import org.telegram.telegrambots.api.objects.Update;
+import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.exceptions.TelegramApiException;
+import org.telegram.telegrambots.meta.api.methods.GetFile;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
+import org.telegram.telegrambots.meta.api.objects.*;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.io.File;
 import java.util.List;
-
 
 public class Bot extends TelegramLongPollingBot {
     private static final Logger log = Logger.getLogger(Bot.class);
 
-    public static final Bot INSTANCE = new Bot();
-
     private Settings set;
 
-    private Bot() {
+    public Bot(DefaultBotOptions options) {
+        super(options);
         this.set = new Settings();
     }
 
@@ -85,13 +80,13 @@ public class Bot extends TelegramLongPollingBot {
 
     private void processFile(String chatID, String fileId) {
         try {
-            GetFile file = new GetFile().setFileId(fileId);
-            String url = super.getFile(file).getFileUrl(getBotToken());
-            Util.downloadImage(url, Render.NAME);
-            File render = Render.render(new File(Util.RES + Render.NAME));
+            GetFile getFile = new GetFile().setFileId(fileId);
+            File file = execute(getFile);
+            Util.downloadImage(file.getFilePath(), Render.NAME);
+            java.io.File render = Render.render(Util.RES + Render.NAME);
             sendPhoto(chatID, render);
         } catch (TelegramApiException e) {
-            e.printStackTrace();
+            log.error(ErrorCode.PHOTO_NOT_LOAD);
         }
     }
 
@@ -103,20 +98,20 @@ public class Bot extends TelegramLongPollingBot {
         sendMessage.setText(text);
 
         try {
-            sendMessage(sendMessage);
+            execute(sendMessage);
         } catch (TelegramApiException e) {
             log.error(ErrorCode.MESSAGE_NOT_SEND);
         }
     }
 
-    private void sendPhoto(String chatID, File file) {
+    private void sendPhoto(String chatID, java.io.File file) {
         SendPhoto sendPhoto = new SendPhoto();
 
         sendPhoto.setChatId(chatID);
-        sendPhoto.setNewPhoto(file);
+        sendPhoto.setPhoto(file);
 
         try {
-            sendPhoto(sendPhoto);
+            execute(sendPhoto);
         } catch (TelegramApiException e) {
             log.error(ErrorCode.PHOTO_NOT_SEND);
         }
