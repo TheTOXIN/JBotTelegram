@@ -1,16 +1,15 @@
 package com.toxin.bot;
 
-    import org.telegram.telegrambots.api.methods.send.SendMessage;
-    import org.telegram.telegrambots.api.methods.send.SendPhoto;
-    import org.telegram.telegrambots.api.objects.Chat;
-    import org.telegram.telegrambots.api.objects.Message;
-    import org.telegram.telegrambots.api.objects.Update;
-    import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-    import org.telegram.telegrambots.exceptions.TelegramApiException;
+import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
+import org.telegram.telegrambots.meta.api.objects.Chat;
+import org.telegram.telegrambots.meta.api.objects.File;
+import org.telegram.telegrambots.meta.api.objects.Message;
+import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-    import java.io.File;
-    import java.io.InputStream;
-    import java.util.*;
+import java.util.*;
 
 public class TMP extends TelegramLongPollingBot {
     private static String[] pidors = {"Влад", "Игорь", "Паша", "Серега", "Костик", "Олег", "Артём", "мой создатель", "АНИМЕ"};
@@ -54,12 +53,12 @@ public class TMP extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return Config.BOT_ID;
+        return Config.BOT_TOKEN;
     }
 
     @Override
     public String getBotUsername() {
-        return Config.BOT_NAME;
+        return com.toxin.bot.Config.BOT_NAME;
     }
 
     @Override
@@ -85,8 +84,8 @@ public class TMP extends TelegramLongPollingBot {
             } else if (str.equals("/action")) {
                 sendText(message, "Команда отвалилась, приходите потом");
             } else if (str.toLowerCase().trim().startsWith("покажи")) {
-                File file = new File("res/image/photo_" + random.nextInt(count_photo) + ".png");
-                sendPhoto(message, file);
+                //File file = new File("res/image/photo_" + random.nextInt(count_photo) + ".png");
+                //sendPhoto(message, file);
             } else if (str.matches("[Кк]то [а-яA-Я ]+\\?")) {
                 String call = str.substring(4, str.indexOf("?"));
                 sendText(message, "По моим данным " + " - " + pidors[random.nextInt(pidors.length)] + " " + call);
@@ -275,7 +274,7 @@ public class TMP extends TelegramLongPollingBot {
         sendMessage.setText(text);
 
         try {
-            sendMessage(sendMessage);
+            execute(sendMessage);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
@@ -284,9 +283,8 @@ public class TMP extends TelegramLongPollingBot {
     public void sendPhoto(Message message, File file) {
         SendPhoto sendPhoto = new SendPhoto();
         sendPhoto.setChatId(message.getChatId().toString());
-        sendPhoto.setNewPhoto(file);
         try {
-            sendPhoto(sendPhoto);
+            execute(sendPhoto);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
