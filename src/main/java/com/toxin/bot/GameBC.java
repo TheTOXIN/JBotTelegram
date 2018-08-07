@@ -20,6 +20,8 @@ public class GameBC {
             ans = startGame();
         } else if (mes.length() == 4 && Util.isNumber(mes)) {
             ans = checkGame(mes);
+        } else if (mes.contains(Consts.STOP_GAME)) {
+            ans = stopGame();
         } else {
             ans = "Я жду 4 значное число...";
         }
