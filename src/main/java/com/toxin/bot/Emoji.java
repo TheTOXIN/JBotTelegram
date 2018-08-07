@@ -4,6 +4,8 @@ public enum Emoji {
     ROCK('\uD83C', '\uDF1A'),
     SCISSORS('\u2702', '\uFE0F'),
     PAPER('\uD83D', '\uDCC4'),
+    KRESTIK(null, '\u274C'),
+    NOLIK('\uD83D', '\uDD35'),
     NULL(' ', ' ');
 
     Character firstChar;

@@ -2,12 +2,12 @@ package com.toxin.bot;
 
 import java.util.Random;
 
-public class MoLGame {
+public class GameMOL {
 
     public static final String KEY_WORD_START = "загадай число";
     public static final String KEY_WORD_ANSWER = "число = ";
 
-    private static final Random rand = new Random();
+    private Random rand = new Random();
 
     private boolean start = false;
     private int secret = 0;

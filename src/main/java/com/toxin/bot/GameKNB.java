@@ -8,7 +8,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import java.util.Arrays;
 import java.util.Random;
 
-public class KNBGame {
+public class GameKNB {
 
     public static final String KEY_WORD = "knb";
 
@@ -55,7 +55,7 @@ public class KNBGame {
         return ans;
     }
 
-    public String startGame() {
+    private String startGame() {
         this.work = true;
         this.counterUser = 0;
         this.counterBot = 0;
@@ -65,7 +65,7 @@ public class KNBGame {
         return "Обажаю - булыжники затычки туалетку";
     }
 
-    public String stopGame() {
+    private String stopGame() {
         this.work = false;
         this.counterUser = 0;
         this.counterBot = 0;
@@ -74,7 +74,7 @@ public class KNBGame {
         return "Ну и ладно, пойду играть с мусором";
     }
 
-    public String checkGame(KNB player) {
+    private String checkGame(KNB player) {
         String res = "Я загадал: " + choose.emoji.toString() + "\n";
 
         boolean win;
@@ -100,11 +100,11 @@ public class KNBGame {
         return res;
     }
 
-    public void updateChoose() {
+    private void updateChoose() {
         this.choose = KNB.values()[(rand.nextInt(KNB.values().length))];
     }
 
-    public ReplyKeyboard updateKeyboard() {
+    private ReplyKeyboard updateKeyboard() {
         if (!this.isWork()) return new ReplyKeyboardRemove();
 
         KeyboardRow row1 = new KeyboardRow();

@@ -17,8 +17,10 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
 
     private Settings set;
 
-    private MoLGame mol;
-    private KNBGame knb;
+    //TODO List game for each player
+    private GameMOL mol;
+    private GameKNB knb;
+    private GameKN kn;
 
     public Bot() {
         init();
@@ -31,8 +33,9 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
 
     private void init() {
         this.set = new Settings();
-        this.mol = new MoLGame();
-        this.knb = new KNBGame();
+        this.mol = new GameMOL();
+        this.knb = new GameKNB();
+        this.kn = new GameKN();
     }
 
     @Override
@@ -89,10 +92,12 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
             sendMessage(chatID, AI.getAnswer(text));
         } else if (text.contains(Prediction.KEY_WORD)) {
             sendMessage(chatID, Prediction.getForecast(text));
-        } else if (text.contains(MoLGame.KEY_WORD_START) || text.contains(MoLGame.KEY_WORD_ANSWER)) {
+        } else if (text.contains(GameMOL.KEY_WORD_START) || text.contains(GameMOL.KEY_WORD_ANSWER)) {
             sendMessage(chatID, this.mol.processGame(text));
-        } else if (text.contains(KNBGame.KEY_WORD) || knb.isWork()) {
+        } else if (text.contains(GameKNB.KEY_WORD) || knb.isWork()) {
             sendKeyboard(chatID, knb.processGame(text), knb.getKeyboard());
+        } else if (text.contains(GameKN.KEY_WORD) || kn.isWork()) {
+            sendKeyboard(chatID, kn.processGame(text), kn.getKeyboard());
         } else {
             String answer = Util.rand.nextInt(2) == 1 ? Hyi.getHyiString(text) : Bla.getBlaString(text);
             sendMessage(chatID, answer);
