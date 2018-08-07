@@ -7,25 +7,32 @@ import org.telegram.telegrambots.meta.api.methods.GetFile;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.*;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
 
-public class Bot extends TelegramLongPollingBot {
+public class Bot extends TelegramLongPollingBot { //TODO MVC???
     private static final Logger log = Logger.getLogger(Bot.class);
 
     private Settings set;
-    private MoreOrLess moreOrLess;
+
+    private MoLGame mol;
+    private KNBGame knb;
 
     public Bot() {
-        this.set = new Settings();
-        this.moreOrLess = new MoreOrLess();
+        init();
     }
 
     public Bot(DefaultBotOptions options) {
         super(options);
+        init();
+    }
+
+    private void init() {
         this.set = new Settings();
-        this.moreOrLess = new MoreOrLess();
+        this.mol = new MoLGame();
+        this.knb = new KNBGame();
     }
 
     @Override
@@ -82,8 +89,10 @@ public class Bot extends TelegramLongPollingBot {
             sendMessage(chatID, AI.getAnswer(text));
         } else if (text.contains(Prediction.KEY_WORD)) {
             sendMessage(chatID, Prediction.getForecast(text));
-        } else if (text.contains(MoreOrLess.KEY_WORD_START) || text.contains(MoreOrLess.KEY_WORD_ANSWER)) {
-            sendMessage(chatID, this.moreOrLess.processGame(text));
+        } else if (text.contains(MoLGame.KEY_WORD_START) || text.contains(MoLGame.KEY_WORD_ANSWER)) {
+            sendMessage(chatID, this.mol.processGame(text));
+        } else if (text.contains(KNBGame.KEY_WORD) || knb.isWork()) {
+            sendKeyboard(chatID, knb.processGame(text), knb.getKeyboard());
         } else {
             String answer = Util.rand.nextInt(2) == 1 ? Hyi.getHyiString(text) : Bla.getBlaString(text);
             sendMessage(chatID, answer);
@@ -126,6 +135,20 @@ public class Bot extends TelegramLongPollingBot {
             execute(sendPhoto);
         } catch (TelegramApiException e) {
             log.error(ErrorCode.PHOTO_NOT_SEND);
+        }
+    }
+
+    private void sendKeyboard(String chatID, String text, ReplyKeyboard keyboard) {
+        SendMessage sendKeyboard = new SendMessage();
+
+        sendKeyboard.setText(text);
+        sendKeyboard.setChatId(chatID);
+        sendKeyboard.setReplyMarkup(keyboard);
+
+        try {
+            execute(sendKeyboard);
+        } catch (TelegramApiException e) {
+            log.error(ErrorCode.MESSAGE_NOT_SEND);
         }
     }
 

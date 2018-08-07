@@ -1,4 +1,4 @@
 package com.toxin.bot;
 
-public class KNB {
+public class Info {
 }
