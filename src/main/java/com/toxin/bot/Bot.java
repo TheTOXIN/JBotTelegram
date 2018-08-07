@@ -21,6 +21,7 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
     private GameMOL mol;
     private GameKNB knb;
     private GameKN kn;
+    private GameBC bc;
 
     public Bot() {
         init();
@@ -36,6 +37,7 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
         this.mol = new GameMOL();
         this.knb = new GameKNB();
         this.kn = new GameKN();
+        this.bc = new GameBC();
     }
 
     @Override
@@ -86,18 +88,22 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
 
         if (set.isChatMock(chatID)) return;
 
-        if (text.contains("мем") || text.contains("mem")) {
+        if (text.contains("мем") || text.contains(Memator.KEY_WORD)) {
             sendPhoto(chatID, Memator.getMem());
         } else if (text.startsWith("бот")) {
             sendMessage(chatID, AI.getAnswer(text));
         } else if (text.contains(Prediction.KEY_WORD)) {
             sendMessage(chatID, Prediction.getForecast(text));
-        } else if (text.contains(GameMOL.KEY_WORD_START) || text.contains(GameMOL.KEY_WORD_ANSWER)) {
+        } else if (text.contains(GameMOL.KEY_WORD) || text.contains(GameMOL.KEY_WORD_START) || text.contains(GameMOL.KEY_WORD_ANSWER)) {
             sendMessage(chatID, this.mol.processGame(text));
         } else if (text.contains(GameKNB.KEY_WORD) || knb.isWork()) {
             sendKeyboard(chatID, knb.processGame(text), knb.getKeyboard());
         } else if (text.contains(GameKN.KEY_WORD) || kn.isWork()) {
             sendKeyboard(chatID, kn.processGame(text), kn.getKeyboard());
+        } else if (text.contains(GameBC.KEY_WORD) || bc.isWork()) {
+            sendMessage(chatID, this.bc.processGame(text));
+        } else if (text.contains("/help")) {
+            sendMessage(chatID, Info.getInfo());
         } else {
             String answer = Util.rand.nextInt(2) == 1 ? Hyi.getHyiString(text) : Bla.getBlaString(text);
             sendMessage(chatID, answer);

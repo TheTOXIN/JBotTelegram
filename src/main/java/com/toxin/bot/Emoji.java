@@ -6,6 +6,8 @@ public enum Emoji {
     PAPER('\uD83D', '\uDCC4'),
     KRESTIK(null, '\u274C'),
     NOLIK('\uD83D', '\uDD35'),
+    BULL('\uD83D', '\uDC02'),
+    COW('\uD83D', '\uDC04'),
     NULL(' ', ' ');
 
     Character firstChar;

@@ -125,12 +125,12 @@ public class GameKN {
     private String matrixToString() {
         String matrix = "";
 
-        matrix += "\n----------------------\n";
+        matrix += "\n-----------------\n";
         for (int i = 0; i < this.size; i++) {
             matrix += "|";
             for (int j = 0; j < this.size; j++) {
                 if (kn[i][j] == 0)
-                    matrix += "      ";
+                    matrix += "     ";
                 else if (kn[i][j] == 1) {
                     matrix += Emoji.KRESTIK.toString();
                 } else if (kn[i][j] == 2) {
@@ -139,7 +139,7 @@ public class GameKN {
 
                 matrix += "|";
             }
-            matrix += "\n----------------------\n";
+            matrix += "\n-----------------\n";
         }
 
         return matrix;

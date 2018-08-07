@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class GameMOL {
 
+    public static final String KEY_WORD = "mol";
     public static final String KEY_WORD_START = "загадай число";
     public static final String KEY_WORD_ANSWER = "число = ";
 

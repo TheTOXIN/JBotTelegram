@@ -10,6 +10,8 @@ import java.util.Random;
 
 public class Memator {
 
+    public static final String KEY_WORD = "mem";
+
     private static final String SOURCE = "http://www.1001mem.ru";
     private static final String KEY_WORDS = "img.1001mem.ru/posts/";
     private static final String NAME = "mem.jpg";
