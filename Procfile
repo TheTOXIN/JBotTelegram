@@ -1,1 +1,1 @@
-worker: sh target/bin/jbot
+worker: sh target/bin/bot
