@@ -1,31 +1,43 @@
-package com.toxin.jbot;
+package com.toxin.bot;
 
 import org.apache.log4j.Logger;
-import org.telegram.telegrambots.api.methods.GetFile;
-import org.telegram.telegrambots.api.methods.send.SendMessage;
-import org.telegram.telegrambots.api.methods.send.SendPhoto;
-import org.telegram.telegrambots.api.objects.Document;
-import org.telegram.telegrambots.api.objects.Message;
-import org.telegram.telegrambots.api.objects.PhotoSize;
-import org.telegram.telegrambots.api.objects.Update;
+import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.exceptions.TelegramApiException;
+import org.telegram.telegrambots.meta.api.methods.GetFile;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
+import org.telegram.telegrambots.meta.api.objects.*;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.io.File;
 import java.util.List;
 
-
-public class Bot extends TelegramLongPollingBot {
+public class Bot extends TelegramLongPollingBot { //TODO MVC???
     private static final Logger log = Logger.getLogger(Bot.class);
 
-    public final static Bot INSTANCE = new Bot();
-
-    private KeyBoard keyBoard;
     private Settings set;
 
-    private Bot() {
-        this.keyBoard = new KeyBoard();
+    //TODO List game for each player
+    private GameMOL mol;
+    private GameKNB knb;
+    private GameKN kn;
+    private GameBC bc;
+
+    public Bot() {
+        init();
+    }
+
+    public Bot(DefaultBotOptions options) {
+        super(options);
+        init();
+    }
+
+    private void init() {
         this.set = new Settings();
+        this.mol = new GameMOL();
+        this.knb = new GameKNB();
+        this.kn = new GameKN();
+        this.bc = new GameBC();
     }
 
     @Override
@@ -33,7 +45,7 @@ public class Bot extends TelegramLongPollingBot {
         if (update.hasMessage()) {
             process(update.getMessage());
         } else if (update.hasCallbackQuery()) {
-            System.out.println(update.getCallbackQuery());
+           log.info(update.getCallbackQuery());
         }
     }
 
@@ -62,6 +74,7 @@ public class Bot extends TelegramLongPollingBot {
 
     private void processText(String chatID, String text) {
         text = text.toLowerCase();
+        text = text.replaceAll("\\s+", " ");
 
         if (text.contains("off")) {
             set.removeChat(chatID);
@@ -75,10 +88,22 @@ public class Bot extends TelegramLongPollingBot {
 
         if (set.isChatMock(chatID)) return;
 
-        if (text.contains("мем") || text.contains("mem")) {
+        if (text.contains("мем") || text.contains(Memator.KEY_WORD)) {
             sendPhoto(chatID, Memator.getMem());
         } else if (text.startsWith("бот")) {
             sendMessage(chatID, AI.getAnswer(text));
+        } else if (text.contains(Prediction.KEY_WORD)) {
+            sendMessage(chatID, Prediction.getForecast(text));
+        } else if (text.contains(GameMOL.KEY_WORD) || text.contains(GameMOL.KEY_WORD_START) || text.contains(GameMOL.KEY_WORD_ANSWER)) {
+            sendMessage(chatID, this.mol.processGame(text));
+        } else if (text.contains(GameKNB.KEY_WORD) || knb.isWork()) {
+            sendKeyboard(chatID, knb.processGame(text), knb.getKeyboard());
+        } else if (text.contains(GameKN.KEY_WORD) || kn.isWork()) {
+            sendKeyboard(chatID, kn.processGame(text), kn.getKeyboard());
+        } else if (text.contains(GameBC.KEY_WORD) || bc.isWork()) {
+            sendMessage(chatID, this.bc.processGame(text));
+        } else if (text.contains("/help")) {
+            sendMessage(chatID, Info.getInfo());
         } else {
             String answer = Util.rand.nextInt(2) == 1 ? Hyi.getHyiString(text) : Bla.getBlaString(text);
             sendMessage(chatID, answer);
@@ -87,13 +112,13 @@ public class Bot extends TelegramLongPollingBot {
 
     private void processFile(String chatID, String fileId) {
         try {
-            GetFile file = new GetFile().setFileId(fileId);
-            String url = super.getFile(file).getFileUrl(getBotToken());
-            Util.downloadImage(url, Render.NAME);
-            File render = Render.render(new File(Util.RES + Render.NAME));
+            GetFile getFile = new GetFile().setFileId(fileId);
+            File file = execute(getFile);
+            Util.downloadImage(file.getFilePath(), Render.NAME);
+            java.io.File render = Render.render(Util.RES + Render.NAME);
             sendPhoto(chatID, render);
         } catch (TelegramApiException e) {
-            e.printStackTrace();
+            log.error(ErrorCode.PHOTO_NOT_LOAD);
         }
     }
 
@@ -105,22 +130,36 @@ public class Bot extends TelegramLongPollingBot {
         sendMessage.setText(text);
 
         try {
-            sendMessage(sendMessage);
+            execute(sendMessage);
         } catch (TelegramApiException e) {
             log.error(ErrorCode.MESSAGE_NOT_SEND);
         }
     }
 
-    private void sendPhoto(String chatID, File file) {
+    private void sendPhoto(String chatID, java.io.File file) {
         SendPhoto sendPhoto = new SendPhoto();
 
         sendPhoto.setChatId(chatID);
-        sendPhoto.setNewPhoto(file);
+        sendPhoto.setPhoto(file);
 
         try {
-            sendPhoto(sendPhoto);
+            execute(sendPhoto);
         } catch (TelegramApiException e) {
             log.error(ErrorCode.PHOTO_NOT_SEND);
+        }
+    }
+
+    private void sendKeyboard(String chatID, String text, ReplyKeyboard keyboard) {
+        SendMessage sendKeyboard = new SendMessage();
+
+        sendKeyboard.setText(text);
+        sendKeyboard.setChatId(chatID);
+        sendKeyboard.setReplyMarkup(keyboard);
+
+        try {
+            execute(sendKeyboard);
+        } catch (TelegramApiException e) {
+            log.error(ErrorCode.MESSAGE_NOT_SEND);
         }
     }
 

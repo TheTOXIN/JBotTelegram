@@ -1,20 +1,20 @@
-package com.toxin.jbot;
+package com.toxin.bot;
 
 public class Bla {
 
     public static String getBlaString(String str) {
 
-        String bla = "";
+        StringBuilder bla = new StringBuilder();
 
         for (int i = 0; i < str.length(); i++) {
             if (isMagick(str)) {
-                bla += convertToBla(str.charAt(i));
+                bla.append(convertToBla(str.charAt(i)));
             } else {
-                bla += str.charAt(i);
+                bla.append(str.charAt(i));
             }
         }
 
-        return bla;
+        return bla.toString();
     }
 
     private static char convertToBla(char c) {

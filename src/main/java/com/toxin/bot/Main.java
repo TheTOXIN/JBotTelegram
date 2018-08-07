@@ -1,4 +1,4 @@
-package com.toxin.jbot;
+package com.toxin.bot;
 
 public class Main {
 
