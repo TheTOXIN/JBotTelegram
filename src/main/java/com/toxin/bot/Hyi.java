@@ -1,5 +1,7 @@
 package com.toxin.bot;
 
+import java.util.stream.IntStream;
+
 public class Hyi {
 
     private static final String HU = "Ху";
@@ -8,7 +10,7 @@ public class Hyi {
     public static String getHyiString(String orig) {
         String word = convertToWord(orig);
 
-        if (word.length() <= 2)
+        if (word.length() <= 2 || !isWord(word))
             return HU + word;
 
         if (isGlas(word.charAt(0))) {
@@ -32,6 +34,10 @@ public class Hyi {
         word = hyi + word;
 
         return word;
+    }
+
+    private static boolean isWord(String word) {
+        return IntStream.range(0, word.length()).anyMatch(i -> SYMBOLS.contains("" + word.charAt(i)));
     }
 
     private static String convertToWord(String str) {

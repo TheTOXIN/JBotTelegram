@@ -128,7 +128,7 @@ public class GameKN {
             matrix += "|";
             for (int j = 0; j < this.size; j++) {
                 if (kn[i][j] == 0)
-                    matrix += "    ";
+                    matrix += "     ";
                 else if (kn[i][j] == 1) {
                     matrix += Emoji.KRESTIK.toString();
                 } else if (kn[i][j] == 2) {
@@ -158,8 +158,8 @@ public class GameKN {
         int x_bot;
         int y_bot;
 
-        int[] x_step = new int[size];
-        int[] y_step = new int[size];
+        int[] x_step = new int[this.size * this.size];
+        int[] y_step = new int[this.size * this.size];
 
         int count = 0;
         for (int i = 0; i < this.size; i++) {
