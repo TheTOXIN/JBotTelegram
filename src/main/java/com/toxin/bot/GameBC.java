@@ -59,11 +59,11 @@ public class GameBC {
         int bulls = 0;
         int cows = 0;
 
-        for (int i = 0; i < size; i++) {
-            if (mes.charAt(i) == this.numbers.charAt(i))
-                bulls++;
-            else if (this.numbers.contains("" + mes.charAt(i)))
-                cows++;
+        for (int i = 0; i < this.size; i++) {
+            if (mes.charAt(i) == this.numbers.charAt(i)) bulls++;
+            for (int j = 0; j < this.size; j++)
+                if (mes.charAt(i) == this.numbers.charAt(j) && i != j)
+                    cows++;
         }
 
         res += Emoji.BULL + " = " + bulls + "\n";

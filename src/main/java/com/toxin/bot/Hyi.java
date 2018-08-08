@@ -3,6 +3,7 @@ package com.toxin.bot;
 public class Hyi {
 
     private static final String HU = "Ху";
+    private static final String SYMBOLS = "йуеыаоэяиюё";
 
     public static String getHyiString(String orig) {
         String word = convertToWord(orig);
@@ -34,10 +35,11 @@ public class Hyi {
     }
 
     private static String convertToWord(String str) {
-        String word = str.split(" ")[str.split(" ").length - 1];
+        String[] words = str.split(" ");
+        String word = words[words.length - 1];
 
         word = word.replaceAll("\\d", "");
-        word = word.replaceAll("[^\\w]", "");
+        word = word.replaceAll("[A-Za-z]", "");
         word = word.toLowerCase();
 
         return word;
@@ -48,7 +50,6 @@ public class Hyi {
     }
 
     private static boolean isGlas(char c) {
-        String SYMBOLS = "йуеыаоэяиюё";
         for (int i = 0; i < SYMBOLS.length(); i++) {
             if (SYMBOLS.charAt(i) == c) {
                 return true;

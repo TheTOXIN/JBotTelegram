@@ -94,7 +94,7 @@ public class GameKN {
         }
 
         KeyboardRow stop = new KeyboardRow();
-        stop.add("STOP GAME");
+        stop.add(Consts.STOP_GAME);
         list.add(stop);
 
         this.keyboard.setKeyboard(list);
@@ -130,7 +130,7 @@ public class GameKN {
             matrix += "|";
             for (int j = 0; j < this.size; j++) {
                 if (kn[i][j] == 0)
-                    matrix += "     ";
+                    matrix += "    ";
                 else if (kn[i][j] == 1) {
                     matrix += Emoji.KRESTIK.toString();
                 } else if (kn[i][j] == 2) {

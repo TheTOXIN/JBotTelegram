@@ -52,6 +52,8 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
     private void process(Message message) {
         String chatID = message.getChatId().toString();
 
+        if (processMock(chatID, message.getText())) return;
+
         String text = message.getText();
         if (text != null && !text.equals("") && !text.isEmpty()) {
             log.info("GETTER: ID=" + chatID + " TEXT=" + text);
@@ -60,7 +62,7 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
 
         Document doc = message.getDocument();
         if (doc != null) {
-            log.info("GETTER: ID=" + chatID + " DOC=" + doc.getFileName() + "id=" + doc.getFileId());
+            log.info("GETTER: ID=" + chatID + " DOC=" + doc.getFileName() + " id=" + doc.getFileId());
             processFile(chatID, doc.getFileId());
         }
 
@@ -75,18 +77,6 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
     private void processText(String chatID, String text) {
         text = text.toLowerCase();
         text = text.replaceAll("\\s+", " ");
-
-        if (text.contains("off")) {
-            set.removeChat(chatID);
-            sendMessage(chatID, "Еще увидимся...");
-            return;
-        } else if (text.contains("on")) {
-            set.addChat(chatID);
-            sendMessage(chatID, "Я вернулся сучки!!!");
-            return;
-        }
-
-        if (set.isChatMock(chatID)) return;
 
         if (text.contains("мем") || text.contains(Memator.KEY_WORD)) {
             sendPhoto(chatID, Memator.getMem());
@@ -114,7 +104,7 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
         try {
             GetFile getFile = new GetFile().setFileId(fileId);
             File file = execute(getFile);
-            Util.downloadImage(file.getFilePath(), Render.NAME);
+            Util.downloadImage(file.getFileUrl(getBotToken()), Render.NAME);
             java.io.File render = Render.render(Util.RES + Render.NAME);
             sendPhoto(chatID, render);
         } catch (TelegramApiException e) {
@@ -161,6 +151,22 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
         } catch (TelegramApiException e) {
             log.error(ErrorCode.MESSAGE_NOT_SEND);
         }
+    }
+
+    private boolean processMock(String chatID, String text) {
+        if (text.equals(Consts.OFF_BOT)) {
+            set.removeChat(chatID);
+            sendMessage(chatID, "Еще увидимся...");
+            log.info("BOT - OFF in " + chatID);
+            return true;
+        } else if (text.equals(Consts.ON_BOT)) {
+            set.addChat(chatID);
+            sendMessage(chatID, "Я вернулся сучки!!!");
+            log.info("BOT - ON in " + chatID);
+            return true;
+        }
+
+        return set.isChatMock(chatID);
     }
 
     @Override
