@@ -1,5 +1,7 @@
-package com.toxin.bot;
+package com.toxin.bot.ability.features;
 
+
+import com.toxin.bot.other.Util;
 
 public class Prediction {
 

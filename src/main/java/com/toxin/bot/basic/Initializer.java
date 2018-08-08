@@ -1,5 +1,6 @@
-package com.toxin.bot;
+package com.toxin.bot.basic;
 
+import com.toxin.bot.other.Config;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.bots.DefaultBotOptions;

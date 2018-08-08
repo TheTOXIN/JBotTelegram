@@ -1,4 +1,4 @@
-package com.toxin.bot;
+package com.toxin.bot.ability.speakers;
 
 import java.util.stream.IntStream;
 

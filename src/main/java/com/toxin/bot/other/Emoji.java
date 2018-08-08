@@ -1,4 +1,4 @@
-package com.toxin.bot;
+package com.toxin.bot.other;
 
 public enum Emoji {
     ROCK('\uD83C', '\uDF1A'),

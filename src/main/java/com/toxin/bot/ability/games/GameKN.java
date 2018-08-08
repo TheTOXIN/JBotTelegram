@@ -1,5 +1,8 @@
-package com.toxin.bot;
+package com.toxin.bot.ability.games;
 
+import com.toxin.bot.other.Util;
+import com.toxin.bot.other.Consts;
+import com.toxin.bot.other.Emoji;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardRemove;

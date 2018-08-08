@@ -1,4 +1,8 @@
-package com.toxin.bot;
+package com.toxin.bot.ability.games;
+
+import com.toxin.bot.other.Util;
+import com.toxin.bot.other.Consts;
+import com.toxin.bot.other.Emoji;
 
 public class GameBC {
 

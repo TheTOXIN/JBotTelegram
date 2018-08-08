@@ -1,4 +1,4 @@
-package com.toxin.bot;
+package com.toxin.bot.ability.features;
 
 import org.apache.log4j.Logger;
 

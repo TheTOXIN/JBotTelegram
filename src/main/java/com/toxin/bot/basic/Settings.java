@@ -1,4 +1,4 @@
-package com.toxin.bot;
+package com.toxin.bot.basic;
 
 import java.util.ArrayList;
 

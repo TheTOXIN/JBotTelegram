@@ -1,4 +1,6 @@
-package com.toxin.bot;
+package com.toxin.bot.ability.speakers;
+
+import com.toxin.bot.other.Util;
 
 public class Bla {
 

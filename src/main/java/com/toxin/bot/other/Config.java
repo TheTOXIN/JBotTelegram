@@ -1,4 +1,4 @@
-package com.toxin.bot;
+package com.toxin.bot.other;
 
 import java.io.FileInputStream;
 import java.io.IOException;

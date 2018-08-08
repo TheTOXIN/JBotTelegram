@@ -1,4 +1,4 @@
-package com.toxin.bot;
+package com.toxin.bot.other;
 
 public class Consts {
     public static final String ON_BOT = "/on";

@@ -1,5 +1,7 @@
-package com.toxin.bot;
+package com.toxin.bot.ability.games;
 
+
+import com.toxin.bot.other.Util;
 
 public class GameMOL {
 

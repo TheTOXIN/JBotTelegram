@@ -1,4 +1,4 @@
-package com.toxin.bot;
+package com.toxin.bot.other;
 
 public enum ErrorCode {
     MESSAGE_NOT_SEND,

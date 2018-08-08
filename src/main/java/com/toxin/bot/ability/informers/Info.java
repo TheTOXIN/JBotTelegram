@@ -1,4 +1,12 @@
-package com.toxin.bot;
+package com.toxin.bot.ability.informers;
+
+import com.toxin.bot.ability.features.Memator;
+import com.toxin.bot.ability.games.GameBC;
+import com.toxin.bot.ability.games.GameKN;
+import com.toxin.bot.ability.games.GameKNB;
+import com.toxin.bot.ability.games.GameMOL;
+import com.toxin.bot.other.Consts;
+import com.toxin.bot.other.Emoji;
 
 public class Info {
 

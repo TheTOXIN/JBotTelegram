@@ -1,5 +1,20 @@
-package com.toxin.bot;
+package com.toxin.bot.basic;
 
+import com.toxin.bot.ability.features.Memator;
+import com.toxin.bot.ability.features.Prediction;
+import com.toxin.bot.ability.features.Render;
+import com.toxin.bot.ability.games.GameBC;
+import com.toxin.bot.ability.games.GameKN;
+import com.toxin.bot.ability.games.GameKNB;
+import com.toxin.bot.ability.games.GameMOL;
+import com.toxin.bot.ability.informers.Info;
+import com.toxin.bot.ability.speakers.AI;
+import com.toxin.bot.ability.speakers.Bla;
+import com.toxin.bot.ability.speakers.Hyi;
+import com.toxin.bot.other.Config;
+import com.toxin.bot.other.Consts;
+import com.toxin.bot.other.ErrorCode;
+import com.toxin.bot.other.Util;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
