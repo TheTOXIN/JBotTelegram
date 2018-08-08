@@ -6,7 +6,6 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Memator {
 
@@ -16,12 +15,10 @@ public class Memator {
     private static final String KEY_WORDS = "img.1001mem.ru/posts/";
     private static final String NAME = "mem.jpg";
 
-    private static final Random RANDOM = new Random();
-
     private static final Logger log = Logger.getLogger(Memator.class);
 
     public static File getMem() {
-        String path = SOURCE + "/new/" + RANDOM.nextInt(1000);
+        String path = SOURCE + "/new/" + Util.rand.nextInt(1000);
         String link;
         String parse;
 
@@ -41,7 +38,7 @@ public class Memator {
                 }
             }
 
-            link = parseToLink(links.get(RANDOM.nextInt(links.size())));
+            link = parseToLink(links.get(Util.rand.nextInt(links.size())));
             Util.downloadImage(link, NAME);
 
             connection.disconnect();

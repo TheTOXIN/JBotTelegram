@@ -6,13 +6,11 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardRem
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class GameKNB {
 
     public static final String KEY_WORD = "knb";
 
-    private Random rand = new Random();
     private ReplyKeyboardMarkup keyboard = new ReplyKeyboardMarkup();
 
     private boolean work;
@@ -101,7 +99,7 @@ public class GameKNB {
     }
 
     private void updateChoose() {
-        this.choose = KNB.values()[(rand.nextInt(KNB.values().length))];
+        this.choose = KNB.values()[(Util.rand.nextInt(KNB.values().length))];
     }
 
     private ReplyKeyboard updateKeyboard() {

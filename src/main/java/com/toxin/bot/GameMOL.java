@@ -1,14 +1,11 @@
 package com.toxin.bot;
 
-import java.util.Random;
 
 public class GameMOL {
 
     public static final String KEY_WORD = "mol";
     public static final String KEY_WORD_START = "загадай число";
     public static final String KEY_WORD_ANSWER = "число = ";
-
-    private Random rand = new Random();
 
     private boolean start = false;
     private int secret = 0;
@@ -27,7 +24,7 @@ public class GameMOL {
         if (start) return "Я уже загадал";
 
         start = true;
-        secret = rand.nextInt(100) + 1;
+        secret = Util.rand.nextInt(100) + 1;
 
         return "Загадал =)";
     }

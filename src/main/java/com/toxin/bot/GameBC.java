@@ -1,12 +1,8 @@
 package com.toxin.bot;
 
-import java.util.Random;
-
 public class GameBC {
 
     public static final String KEY_WORD = "bc";
-
-    private Random rand = new Random();
 
     private boolean work;
     private int counter;
@@ -79,7 +75,7 @@ public class GameBC {
 
     private void updateNumbers() {
         for (int i = 0; i < size; i++) {
-            this.numbers += String.valueOf(rand.nextInt(10));
+            this.numbers += String.valueOf(Util.rand.nextInt(10));
         }
     }
 

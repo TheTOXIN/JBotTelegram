@@ -7,13 +7,11 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class GameKN {
 
     public static final String KEY_WORD = "kn";
 
-    private Random rand = new Random();
     private ReplyKeyboardMarkup keyboard = new ReplyKeyboardMarkup();
 
     private boolean work;
@@ -160,10 +158,22 @@ public class GameKN {
         int x_bot;
         int y_bot;
 
-        do {
-            x_bot = rand.nextInt(size);
-            y_bot = rand.nextInt(size);
-        } while (kn[y_bot][x_bot] != 0);
+        int[] x_step = new int[size];
+        int[] y_step = new int[size];
+
+        int count = 0;
+        for (int i = 0; i < this.size; i++) {
+            for (int j = 0; j < this.size; j++) {
+                if (kn[i][j] == 0) {
+                    x_step[count] = j;
+                    y_step[count] = i;
+                    count++;
+                }
+            }
+        }
+
+        x_bot = x_step[Util.rand.nextInt(count)];
+        y_bot = y_step[Util.rand.nextInt(count)];
 
         kn[y_bot][x_bot] = 2;
     }
