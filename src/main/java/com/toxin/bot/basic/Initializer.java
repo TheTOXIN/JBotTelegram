@@ -34,8 +34,10 @@ public class Initializer {
         TelegramBotsApi botsApi = new TelegramBotsApi();
 
         try {
-            if (Config.PROXY_WORK) botsApi.registerBot(new Bot(getOptions()));
-            else botsApi.registerBot(new Bot());
+            if (Config.PROXY_WORK)
+                botsApi.registerBot(new Bot(getOptions()));
+            else
+                botsApi.registerBot(new Bot());
         } catch (TelegramApiRequestException e) {
             log.error(BOT_NOT_REGISTER);
         }
