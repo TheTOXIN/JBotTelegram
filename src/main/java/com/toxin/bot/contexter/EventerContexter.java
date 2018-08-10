@@ -1,4 +1,12 @@
 package com.toxin.bot.contexter;
 
-public class EventerContexter {
+import java.util.Set;
+
+public class EventerContexter extends AbstractContexter {
+
+    @Override
+    public Set<String> getContext() {
+        return null;
+    }
+
 }

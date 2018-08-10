@@ -1,4 +1,4 @@
 package com.toxin.bot.responser;
 
-public class FeatureRespons {
+public class FeatureRespons extends AbstractRespons {
 }

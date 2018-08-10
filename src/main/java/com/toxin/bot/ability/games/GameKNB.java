@@ -10,7 +10,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 
 import java.util.Arrays;
 
-public class GameKNB {
+public class GameKNB extends AbstractGame{
 
     public static final String KEY_WORD = "knb";
 

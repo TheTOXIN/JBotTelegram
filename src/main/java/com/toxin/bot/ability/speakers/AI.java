@@ -7,7 +7,7 @@ import ai.api.model.AIRequest;
 import ai.api.model.AIResponse;
 import com.toxin.bot.other.Config;
 
-public class AI {
+public class AI extends AbstractSpeaker {
 
     public static String getAnswer(String text) {
         String answer = "";

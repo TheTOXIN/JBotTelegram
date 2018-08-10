@@ -1,4 +1,4 @@
 package com.toxin.bot.requester;
 
-public class InformerRequest {
+public class InformerRequest extends AbstractRequest {
 }

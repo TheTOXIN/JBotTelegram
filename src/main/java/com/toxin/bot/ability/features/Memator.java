@@ -8,7 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class Memator {
+public class Memator extends AbstractFeature {
 
     public static final String KEY_WORD = "mem";
 

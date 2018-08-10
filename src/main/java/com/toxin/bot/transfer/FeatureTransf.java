@@ -1,4 +1,4 @@
 package com.toxin.bot.transfer;
 
-public class FeatureTransf {
+public class FeatureTransf extends AbstractTransf {
 }

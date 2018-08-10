@@ -8,7 +8,7 @@ import com.toxin.bot.ability.games.GameMOL;
 import com.toxin.bot.other.Consts;
 import com.toxin.bot.other.Emoji;
 
-public class Info {
+public class Info extends AbstractInformer {
 
     private final static StringBuilder sb = new StringBuilder()
             .append("Хувствуйсте, я - БотХуиБот ")
@@ -29,4 +29,8 @@ public class Info {
         return sb.toString();
     }
 
+    @Override
+    protected String initId() {
+        return "info";
+    }
 }

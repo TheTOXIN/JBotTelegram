@@ -1,4 +1,4 @@
 package com.toxin.bot.requester;
 
-public class SpeakerRequest {
+public class SpeakerRequest extends AbstractRequest {
 }

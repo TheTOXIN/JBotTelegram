@@ -2,7 +2,7 @@ package com.toxin.bot.ability.speakers;
 
 import java.util.stream.IntStream;
 
-public class Hyi {
+public class Hyi extends AbstractSpeaker {
 
     private static final String HU = "Ху";
     private static final String SYMBOLS = "йуеыаоэяиюё";

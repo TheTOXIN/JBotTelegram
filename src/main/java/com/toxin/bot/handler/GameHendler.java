@@ -1,4 +1,4 @@
 package com.toxin.bot.handler;
 
-public class GameHendler {
+public class GameHendler extends AbstractHandler {
 }

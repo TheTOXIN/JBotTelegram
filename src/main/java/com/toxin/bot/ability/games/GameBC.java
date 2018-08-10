@@ -4,7 +4,7 @@ import com.toxin.bot.other.Util;
 import com.toxin.bot.other.Consts;
 import com.toxin.bot.other.Emoji;
 
-public class GameBC {
+public class GameBC extends AbstractGame {
 
     public static final String KEY_WORD = "bc";
 

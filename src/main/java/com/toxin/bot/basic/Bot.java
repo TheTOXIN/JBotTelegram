@@ -10,6 +10,9 @@ import org.telegram.telegrambots.meta.api.objects.*;
 public class Bot extends TelegramLongPollingBot {
     private static final Logger log = Logger.getLogger(Bot.class);
 
+    private Collector collector = new Collector();
+    private Transmitter transmitter = new Transmitter();
+
     public Bot() {
 
     }
@@ -20,7 +23,8 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-
+        collector.processUpdate(update);
+        transmitter.processTransf(null);
     }
 
     @Override

@@ -1,4 +1,4 @@
 package com.toxin.bot.transfer;
 
-public class InformerTransf {
+public class InformerTransf extends AbstractTransf {
 }

@@ -1,4 +1,4 @@
 package com.toxin.bot.handler;
 
-public class EventerHendler {
+public class EventerHendler extends AbstractHandler {
 }

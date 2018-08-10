@@ -1,4 +1,4 @@
 package com.toxin.bot.responser;
 
-public class SpeakerRespons {
+public class SpeakerRespons extends AbstractRespons {
 }

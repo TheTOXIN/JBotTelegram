@@ -1,4 +1,4 @@
 package com.toxin.bot.handler;
 
-public class SpeakerHendler {
+public class SpeakerHendler extends AbstractHandler {
 }

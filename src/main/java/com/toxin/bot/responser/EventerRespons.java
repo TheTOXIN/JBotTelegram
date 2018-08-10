@@ -1,4 +1,4 @@
 package com.toxin.bot.responser;
 
-public class EventerRespons {
+public class EventerRespons extends AbstractRespons {
 }

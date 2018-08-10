@@ -1,4 +1,4 @@
 package com.toxin.bot.handler;
 
-public class InformerHendler {
+public class InformerHendler extends AbstractHandler {
 }

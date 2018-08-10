@@ -1,4 +1,4 @@
 package com.toxin.bot.ability.eventers;
 
-public class Mock {
+public class Mock extends AbstractEventer {
 }

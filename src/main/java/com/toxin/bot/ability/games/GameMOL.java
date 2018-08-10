@@ -3,7 +3,7 @@ package com.toxin.bot.ability.games;
 
 import com.toxin.bot.other.Util;
 
-public class GameMOL {
+public class GameMOL extends AbstractGame {
 
     public static final String KEY_WORD = "mol";
     public static final String KEY_WORD_START = "загадай число";

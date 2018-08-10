@@ -2,7 +2,7 @@ package com.toxin.bot.ability.speakers;
 
 import com.toxin.bot.other.Util;
 
-public class Bla {
+public class Bla extends AbstractSpeaker {
 
     public static String getBlaString(String str) {
 

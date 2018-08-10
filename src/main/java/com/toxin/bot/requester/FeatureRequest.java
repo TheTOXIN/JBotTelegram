@@ -1,4 +1,4 @@
 package com.toxin.bot.requester;
 
-public class FeatureRequest {
+public class FeatureRequest extends AbstractRequest {
 }

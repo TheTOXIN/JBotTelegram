@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Render {
+public class Render extends AbstractFeature {
 
     private static final Logger log = Logger.getLogger(Render.class);
 
