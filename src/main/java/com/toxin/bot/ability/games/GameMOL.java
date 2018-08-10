@@ -3,6 +3,8 @@ package com.toxin.bot.ability.games;
 
 import com.toxin.bot.other.Util;
 
+import java.util.List;
+
 public class GameMOL extends AbstractGame {
 
     public static final String KEY_WORD = "mol";
@@ -51,6 +53,16 @@ public class GameMOL extends AbstractGame {
         attempt = 0;
 
         return res;
+    }
+
+    @Override
+    public List<String> getKeyWords() {
+        return null;
+    }
+
+    @Override
+    public String getId() {
+        return null;
     }
 
 }

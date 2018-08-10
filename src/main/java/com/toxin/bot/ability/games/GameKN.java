@@ -189,4 +189,14 @@ public class GameKN extends AbstractGame {
         return this.work;
     }
 
+    @Override
+    public List<String> getKeyWords() {
+        return null;
+    }
+
+    @Override
+    public String getId() {
+        return null;
+    }
+
 }

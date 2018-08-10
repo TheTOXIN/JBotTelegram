@@ -1,13 +1,9 @@
 package com.toxin.bot.ability.informers;
 
-public abstract class AbstractInformer {
+import com.toxin.bot.ability.Ability;
 
-    private String id;
+public abstract class AbstractInformer implements Ability {
 
-    public AbstractInformer() {
-        this.id = initId();
-    }
 
-    protected abstract String initId();
 
 }

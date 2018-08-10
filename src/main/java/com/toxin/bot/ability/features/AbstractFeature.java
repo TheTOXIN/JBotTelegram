@@ -1,4 +1,6 @@
 package com.toxin.bot.ability.features;
 
-public abstract class AbstractFeature {
+import com.toxin.bot.ability.Ability;
+
+public abstract class AbstractFeature implements Ability {
 }

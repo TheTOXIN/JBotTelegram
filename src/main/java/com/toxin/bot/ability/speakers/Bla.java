@@ -2,6 +2,8 @@ package com.toxin.bot.ability.speakers;
 
 import com.toxin.bot.other.Util;
 
+import java.util.List;
+
 public class Bla extends AbstractSpeaker {
 
     public static String getBlaString(String str) {
@@ -65,4 +67,15 @@ public class Bla extends AbstractSpeaker {
     private static boolean isMagick(String str) {
         return Util.rand.nextInt(str.length()) > str.length() / 2;
     }
+
+    @Override
+    public List<String> getKeyWords() {
+        return null;
+    }
+
+    @Override
+    public String getId() {
+        return null;
+    }
+
 }

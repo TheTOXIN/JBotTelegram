@@ -1,20 +1,19 @@
 package com.toxin.bot.contexter;
 
 
+import com.toxin.bot.ability.Ability;
+import org.telegram.telegrambots.meta.api.objects.Update;
+
 import java.util.*;
 
-public abstract class AbstractContexter {
+public abstract class AbstractContexter<A extends Ability> {
 
-    private Set<String> context = new HashSet<>();
+    private HashMap<A, List<String>> context = new HashMap<>();
 
-    public AbstractContexter() {
-        fillContext();
-    }
+    public abstract void pushContext(A ability, String context);
+    public abstract List<String> pullContext(A ability);
 
-    public abstract Set<String> getContext();
-
-    private void fillContext() {
-        this.context = getContext();
-    }
+    public abstract boolean itsMe(Update update);
+    public abstract List<String> getKeyWords();
 
 }

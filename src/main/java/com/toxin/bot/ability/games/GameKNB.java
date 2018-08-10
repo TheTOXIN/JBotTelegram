@@ -9,6 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardRem
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class GameKNB extends AbstractGame{
 
@@ -132,4 +133,15 @@ public class GameKNB extends AbstractGame{
     public boolean isWork() {
         return work;
     }
+
+    @Override
+    public List<String> getKeyWords() {
+        return null;
+    }
+
+    @Override
+    public String getId() {
+        return null;
+    }
+
 }

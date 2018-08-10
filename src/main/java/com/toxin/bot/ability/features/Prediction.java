@@ -3,6 +3,8 @@ package com.toxin.bot.ability.features;
 
 import com.toxin.bot.other.Util;
 
+import java.util.List;
+
 public class Prediction extends AbstractFeature {
 
     public static final String KEY_WORD = "вероятность";
@@ -21,6 +23,16 @@ public class Prediction extends AbstractFeature {
         forecast.append(event).append(" = ").append(percent).append("%");
 
         return forecast.toString();
+    }
+
+    @Override
+    public List<String> getKeyWords() {
+        return null;
+    }
+
+    @Override
+    public String getId() {
+        return null;
     }
 
 }

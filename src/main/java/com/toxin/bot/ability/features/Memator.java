@@ -7,6 +7,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Memator extends AbstractFeature {
 
@@ -56,6 +57,16 @@ public class Memator extends AbstractFeature {
         int to = str.indexOf('\"', from);
 
         return str.substring(from, to);
+    }
+
+    @Override
+    public List<String> getKeyWords() {
+        return null;
+    }
+
+    @Override
+    public String getId() {
+        return null;
     }
 
 }

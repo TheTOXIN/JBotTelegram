@@ -1,4 +1,13 @@
 package com.toxin.bot.transfer;
 
-public class SpeakerTransf extends AbstractTransf {
+import com.toxin.bot.ability.speakers.AbstractSpeaker;
+import org.telegram.telegrambots.meta.api.objects.Update;
+
+
+public class SpeakerTransf <A extends AbstractSpeaker> extends AbstractTransf<A> {
+
+    public SpeakerTransf(Update update) {
+        super(update);
+    }
+
 }

@@ -1,4 +1,6 @@
 package com.toxin.bot.ability.eventers;
 
-public abstract class AbstractEventer {
+import com.toxin.bot.ability.Ability;
+
+public abstract class AbstractEventer implements Ability {
 }

@@ -1,4 +1,9 @@
 package com.toxin.bot.ability.speakers;
 
-public abstract class AbstractSpeaker {
+import com.toxin.bot.ability.Ability;
+
+public abstract class AbstractSpeaker implements Ability {
+
+
+
 }

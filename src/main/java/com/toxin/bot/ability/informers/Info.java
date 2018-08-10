@@ -8,6 +8,8 @@ import com.toxin.bot.ability.games.GameMOL;
 import com.toxin.bot.other.Consts;
 import com.toxin.bot.other.Emoji;
 
+import java.util.List;
+
 public class Info extends AbstractInformer {
 
     private final static StringBuilder sb = new StringBuilder()
@@ -25,12 +27,15 @@ public class Info extends AbstractInformer {
             .append("\n(Остановить игру - /" + Consts.STOP_GAME + ")")
             .append("\nМой папочка - " + Consts.CREATOR);
 
-    public static String getInfo() {
-        return sb.toString();
+
+    @Override
+    public List<String> getKeyWords() {
+        return null;
     }
 
     @Override
-    protected String initId() {
-        return "info";
+    public String getId() {
+        return null;
     }
+
 }

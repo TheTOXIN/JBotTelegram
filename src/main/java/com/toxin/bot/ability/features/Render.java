@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class Render extends AbstractFeature {
 
@@ -92,6 +93,16 @@ public class Render extends AbstractFeature {
         }
 
         return res;
+    }
+
+    @Override
+    public List<String> getKeyWords() {
+        return null;
+    }
+
+    @Override
+    public String getId() {
+        return null;
     }
 
 }
