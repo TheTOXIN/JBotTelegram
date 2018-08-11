@@ -15,6 +15,7 @@ import com.toxin.bot.ability.speakers.Bla;
 import com.toxin.bot.ability.speakers.Hyi;
 import com.toxin.bot.contexter.*;
 import com.toxin.bot.transfer.*;
+import lombok.Getter;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.ArrayList;
@@ -24,7 +25,10 @@ import java.util.stream.Collectors;
 
 public class Collector {
 
+    @Getter
     private List<AbstractContexter<? extends Ability>> contexters = new ArrayList<>();
+
+    @Getter
     private List<AbstractTransf<? extends Ability>> transfers = new ArrayList<>();
 
     public Collector() {
@@ -41,29 +45,15 @@ public class Collector {
 
     public void processUpdate(Update update) {
         //ключевых слов может быть несколько, нужно учитывать все контексты для каждого абилти
-        //возможно эту хуйню нужно рахделить по абилити
         if (update.hasMessage()) {
-            contexters
-                    .stream()
-                    .filter(c -> c.itsMe(update))
-                    .collect(Collectors.toList())
-                    .forEach(c -> {
-                        AbstractTransf<? extends Ability> transf = null;
-
-                        if (c instanceof EventerContexter) {
-                            transf = new EventerTransf<>(update);
-                        } else if (c instanceof FeatureContexter) {
-                            transf = new FeatureTransf<>(update);
-                        } else if (c instanceof GameContexter) {
-                            transf = new GameTransf<>(update);
-                        } else if (c instanceof InformerContexter) {
-                            transf = new InformerTransf<>(update);
-                        } else if (c instanceof SpeakerContexter) {
-                            transf = new SpeakerTransf<>(update);
-                        }
-
-                        transfers.add(transf);
-                    });
+            this.transfers.addAll(
+                    this.contexters
+                            .stream()
+                            .filter(c -> c.itsMe(update))
+                            .map(AbstractContexter::generateTransf)
+                            .peek(t -> t.setUpdate(update))
+                            .collect(Collectors.toList())
+            );
         }
     }
 
@@ -102,14 +92,6 @@ public class Collector {
                 new SpeakerContexter<Bla>(),
                 new SpeakerContexter<Hyi>()
         ));
-    }
-
-    public List<AbstractContexter<? extends Ability>> getContexters() {
-        return contexters;
-    }
-
-    public List<AbstractTransf<? extends Ability>> getTransfers() {
-        return transfers;
     }
 
 }

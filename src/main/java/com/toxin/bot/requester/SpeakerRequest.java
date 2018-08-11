@@ -1,4 +1,12 @@
 package com.toxin.bot.requester;
 
-public class SpeakerRequest extends AbstractRequest {
+import com.toxin.bot.transfer.SpeakerTransf;
+
+public class SpeakerRequest<T extends SpeakerTransf> extends AbstractRequest<T> {
+
+    @Override
+    public void accpetTranf(T transf) {
+
+    }
+
 }

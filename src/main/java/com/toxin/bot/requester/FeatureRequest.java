@@ -1,4 +1,12 @@
 package com.toxin.bot.requester;
 
-public class FeatureRequest extends AbstractRequest {
+import com.toxin.bot.transfer.FeatureTransf;
+
+public class FeatureRequest<T extends FeatureTransf> extends AbstractRequest<T> {
+
+    @Override
+    public void accpetTranf(T transf) {
+
+    }
+
 }

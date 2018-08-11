@@ -1,4 +1,12 @@
 package com.toxin.bot.requester;
 
-public class GameRequest extends AbstractRequest {
+import com.toxin.bot.transfer.GameTransf;
+
+public class GameRequest<T extends GameTransf> extends AbstractRequest<T> {
+
+    @Override
+    public void accpetTranf(T transf) {
+
+    }
+
 }

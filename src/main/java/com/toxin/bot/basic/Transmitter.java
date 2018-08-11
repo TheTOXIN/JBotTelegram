@@ -1,31 +1,39 @@
 package com.toxin.bot.basic;
 
-import com.toxin.bot.requester.*;
+
+import com.toxin.bot.ability.Ability;
 import com.toxin.bot.transfer.AbstractTransf;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class Transmitter {
+public class Transmitter { //придумать механизм который бдует автоматос дергать очериди и обрабатывать трансферы
 
-    private List<AbstractRequest> requests = new ArrayList<>();
+    private Queue<AbstractTransf<? extends Ability>> in = new LinkedList<>();
+    private Queue<AbstractTransf<? extends Ability>> out = new LinkedList<>();
 
-    public Transmitter() {
-        intiRequests();
+    public void pushIn(AbstractTransf<? extends Ability> transf) {
+        this.in.offer(transf);
     }
 
-    public void intiRequests() {
-        requests.add(new EventerRequest());
-        requests.add(new FeatureRequest());
-        requests.add(new GameRequest());
-        requests.add(new InformerRequest());
-        requests.add(new SpeakerRequest());
+    public void pushOut(AbstractTransf<? extends Ability> transf) {
+        this.out.offer(transf);
     }
 
-    public void processTransf(AbstractTransf transf) {
-        for (AbstractRequest request : requests) {
+    public AbstractTransf<? extends Ability> pullIn() {
+        return this.in.remove();
+    }
 
-        }
+    public AbstractTransf<? extends Ability> pullOut() {
+        return this.out.remove();
+    }
+
+    private void inTransf(AbstractTransf transf) {
+        transf.generateRequest().accpetTranf(transf);//OMG
+    }
+
+    private AbstractTransf outTransf() {
+        return null;
     }
 
 }
