@@ -1,4 +1,13 @@
 package com.toxin.bot.responser;
 
-public class SpeakerRespons extends AbstractRespons {
+import com.toxin.bot.transfer.SpeakerTransf;
+
+
+public class SpeakerRespons extends AbstractRespons<SpeakerTransf> {
+
+    @Override
+    public void sendTransf(SpeakerTransf transf) {
+
+    }
+
 }

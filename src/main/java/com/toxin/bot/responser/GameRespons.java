@@ -1,4 +1,13 @@
 package com.toxin.bot.responser;
 
-public class GameRespons extends AbstractRespons {
+import com.toxin.bot.transfer.GameTransf;
+
+
+public class GameRespons extends AbstractRespons<GameTransf> {
+
+    @Override
+    public void sendTransf(GameTransf transf) {
+
+    }
+
 }

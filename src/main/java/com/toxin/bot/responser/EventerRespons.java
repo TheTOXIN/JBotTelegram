@@ -1,4 +1,13 @@
 package com.toxin.bot.responser;
 
-public class EventerRespons extends AbstractRespons {
+import com.toxin.bot.transfer.EventerTransf;
+
+
+public class EventerRespons extends AbstractRespons<EventerTransf> {
+
+    @Override
+    public void sendTransf(EventerTransf transf) {
+
+    }
+
 }

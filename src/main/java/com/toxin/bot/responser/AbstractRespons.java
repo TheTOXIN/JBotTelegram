@@ -1,4 +1,10 @@
 package com.toxin.bot.responser;
 
-public abstract class AbstractRespons {
+import com.toxin.bot.transfer.AbstractTransf;
+
+
+public abstract class AbstractRespons<T extends AbstractTransf> {
+
+    public abstract void sendTransf(T transf);
+
 }

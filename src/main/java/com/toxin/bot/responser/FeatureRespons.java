@@ -1,4 +1,13 @@
 package com.toxin.bot.responser;
 
-public class FeatureRespons extends AbstractRespons {
+import com.toxin.bot.transfer.FeatureTransf;
+
+
+public class FeatureRespons extends AbstractRespons<FeatureTransf> {
+
+    @Override
+    public void sendTransf(FeatureTransf transf) {
+
+    }
+
 }

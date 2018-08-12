@@ -1,12 +1,19 @@
 package com.toxin.bot.requester;
 
+import com.toxin.bot.handler.AbstractHandler;
+import com.toxin.bot.handler.EventerHendler;
 import com.toxin.bot.transfer.EventerTransf;
 
-public class EventerRequest<T extends EventerTransf> extends AbstractRequest<T> {
+public class EventerRequest extends AbstractRequest<EventerTransf> {
 
     @Override
-    public void accpetTranf(T transf) {
+    public void accpetTranf(EventerTransf transf) {
 
+    }
+
+    @Override
+    public AbstractHandler<EventerTransf> getHandler() {
+        return new EventerHendler();
     }
 
 }

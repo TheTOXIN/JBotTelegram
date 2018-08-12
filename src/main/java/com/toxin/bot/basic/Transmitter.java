@@ -29,7 +29,7 @@ public class Transmitter { //придумать механизм который 
     }
 
     private void inTransf(AbstractTransf transf) {
-        transf.generateRequest().accpetTranf(transf);//OMG
+        
     }
 
     private AbstractTransf outTransf() {

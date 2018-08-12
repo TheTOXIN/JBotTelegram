@@ -1,12 +1,19 @@
 package com.toxin.bot.requester;
 
+import com.toxin.bot.handler.AbstractHandler;
+import com.toxin.bot.handler.SpeakerHendler;
 import com.toxin.bot.transfer.SpeakerTransf;
 
-public class SpeakerRequest<T extends SpeakerTransf> extends AbstractRequest<T> {
+public class SpeakerRequest extends AbstractRequest<SpeakerTransf> {
 
     @Override
-    public void accpetTranf(T transf) {
+    public void accpetTranf(SpeakerTransf transf) {
 
+    }
+
+    @Override
+    public AbstractHandler<SpeakerTransf> getHandler() {
+        return new SpeakerHendler();
     }
 
 }

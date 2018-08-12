@@ -1,12 +1,19 @@
 package com.toxin.bot.requester;
 
+import com.toxin.bot.handler.AbstractHandler;
+import com.toxin.bot.handler.InformerHendler;
 import com.toxin.bot.transfer.InformerTransf;
 
-public class InformerRequest<T extends InformerTransf> extends AbstractRequest<T> {
+public class InformerRequest extends AbstractRequest<InformerTransf> {
 
     @Override
-    public void accpetTranf(T transf) {
+    public void accpetTranf(InformerTransf transf) {
 
+    }
+
+    @Override
+    public AbstractHandler<InformerTransf> getHandler() {
+        return new InformerHendler();
     }
 
 }

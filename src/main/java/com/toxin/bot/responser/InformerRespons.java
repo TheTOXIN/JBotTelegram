@@ -1,4 +1,13 @@
 package com.toxin.bot.responser;
 
-public class InformerRespons extends AbstractRespons {
+import com.toxin.bot.transfer.InformerTransf;
+
+
+public class InformerRespons extends AbstractRespons<InformerTransf> {
+
+    @Override
+    public void sendTransf(InformerTransf transf) {
+
+    }
+
 }
