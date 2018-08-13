@@ -8,13 +8,8 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class FeatureTransf<A extends AbstractFeature> extends AbstractTransf<A> {
 
-    public FeatureTransf(Update update) {
-        super(update);
-    }
-
-    @Override
-    public A getAbility() {
-        return null;
+    public FeatureTransf(Update update, A ability) {
+        super(update, ability);
     }
 
     @Override

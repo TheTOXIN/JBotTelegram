@@ -11,7 +11,6 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 @NoArgsConstructor
 public abstract class AbstractTransf<A extends Ability> {
 
-    private A ability;
     private AbstractRequest<? extends AbstractTransf> request;
 
     @Getter
@@ -20,12 +19,12 @@ public abstract class AbstractTransf<A extends Ability> {
 
     @Getter
     @Setter
-    private String chatId;
+    private A ability;
 
-    public AbstractTransf(Update update) {
+    public AbstractTransf(Update update, A ability) {
         this.update = update;
+        this.ability = ability;
     }
 
-    public abstract A getAbility();
     public abstract AbstractRequest<? extends AbstractTransf> getRequest();
 }

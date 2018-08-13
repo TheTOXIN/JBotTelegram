@@ -8,13 +8,8 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class GameTransf <A extends AbstractGame> extends AbstractTransf<A> {
 
-    public GameTransf(Update update) {
-        super(update);
-    }
-
-    @Override
-    public A getAbility() {
-        return null;
+    public GameTransf(Update update, A ability) {
+        super(update, ability);
     }
 
     @Override

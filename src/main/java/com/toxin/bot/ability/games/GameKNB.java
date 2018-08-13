@@ -13,7 +13,7 @@ import java.util.List;
 
 public class GameKNB extends AbstractGame {
 
-    public static final String KEY_WORD = "knb";
+    public final static String KEY_WORD = "knb";
 
     private ReplyKeyboardMarkup keyboard = new ReplyKeyboardMarkup();
 
@@ -40,7 +40,7 @@ public class GameKNB extends AbstractGame {
         }
     }
 
-    private static GameKNB instance = new GameKNB();
+    public final static GameKNB instance = new GameKNB();
 
     private GameKNB() {
     }

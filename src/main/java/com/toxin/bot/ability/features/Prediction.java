@@ -8,7 +8,7 @@ public class Prediction extends AbstractFeature {
 
     public static final String KEY_WORD = "вероятность";
 
-    private static Prediction instance = new Prediction();
+    public static final Prediction instance = new Prediction();
 
     private Prediction() {}
 

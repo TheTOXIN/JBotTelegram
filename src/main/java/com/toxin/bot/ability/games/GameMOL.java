@@ -14,7 +14,7 @@ public class GameMOL extends AbstractGame {
     private int secret = 0;
     private int attempt = 0;
 
-    private static GameMOL instance = new GameMOL();
+    public static final GameMOL instance = new GameMOL();
 
     private GameMOL() {
     }

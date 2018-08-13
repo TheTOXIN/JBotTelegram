@@ -24,7 +24,7 @@ public class GameKN extends AbstractGame {
     private final int size = 3;
     private int[][] kn = new int[size][size];
 
-    private static GameKN instance = new GameKN();
+    public static final GameKN instance = new GameKN();
 
     private GameKN() {
     }

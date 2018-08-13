@@ -15,7 +15,7 @@ public class Render extends AbstractFeature {
 
     public static final String NAME = "render.png";
 
-    private static Render instance = new Render();
+    public static final Render instance = new Render();
 
     private Render() {}
 

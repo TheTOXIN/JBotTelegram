@@ -19,7 +19,7 @@ public class Memator extends AbstractFeature {
 
     private static final Logger log = Logger.getLogger(Memator.class);
 
-    private static Memator instance = new Memator();
+    public static final Memator instance = new Memator();
 
     private Memator() {}
 

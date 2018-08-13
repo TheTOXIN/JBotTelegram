@@ -15,7 +15,7 @@ public class GameBC extends AbstractGame {
     private String numbers = "";
     private final int size = 4;
 
-    private static GameBC instance = new GameBC();
+    public static final GameBC instance = new GameBC();
 
     private GameBC() {}
 

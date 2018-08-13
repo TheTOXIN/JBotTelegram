@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Bla extends AbstractSpeaker {
 
-    private static Bla instance = new Bla();
+    public static final Bla instance = new Bla();
 
     private Bla() {}
 

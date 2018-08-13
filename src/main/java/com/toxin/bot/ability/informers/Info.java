@@ -27,7 +27,7 @@ public class Info extends AbstractInformer {
             .append("\n(Остановить игру - /" + Consts.STOP_GAME + ")")
             .append("\nМой папочка - " + Consts.CREATOR);
 
-    private static Info instance = new Info();
+    public static final Info instance = new Info();
 
     private Info() {}
 

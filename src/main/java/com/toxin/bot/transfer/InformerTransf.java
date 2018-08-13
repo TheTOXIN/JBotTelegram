@@ -9,13 +9,8 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class InformerTransf <A extends AbstractInformer> extends AbstractTransf<A> {
 
-    public InformerTransf(Update update) {
-        super(update);
-    }
-
-    @Override
-    public A getAbility() {
-        return null;
+    public InformerTransf(Update update, A ability) {
+        super(update, ability);
     }
 
     @Override

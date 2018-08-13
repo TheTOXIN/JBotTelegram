@@ -8,7 +8,7 @@ public class Hyi extends AbstractSpeaker {
     private static final String HU = "Ху";
     private static final String SYMBOLS = "йуеыаоэяиюё";
 
-    private static Hyi instance = new Hyi();
+    public static final Hyi instance = new Hyi();
 
     private Hyi() {}
 

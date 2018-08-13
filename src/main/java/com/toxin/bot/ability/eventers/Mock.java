@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Mock extends AbstractEventer {
 
-    private static Mock instance = new Mock();
+    public static final Mock instance = new Mock();
 
     private Mock() {}
 

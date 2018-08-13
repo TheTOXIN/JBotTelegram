@@ -21,6 +21,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Collector {
@@ -49,46 +50,45 @@ public class Collector {
             this.contexters
                 .stream()
                 .filter(c -> c.itsMe(update))
-                .map(AbstractContexter::generateTransf)
-                .peek(t -> t.setUpdate(update))
+                .map(c -> c.generateTransf(update))
                 .forEach(transmitter::pushIn);
         }
     }
 
     private void intiEventerContexts() {
         this.contexters.addAll(Arrays.asList(
-            new EventerContexter<Mock>()
+            new EventerContexter<>(Mock.instance)
         ));
     }
 
     private void intiFeatureContexts() {
         this.contexters.addAll(Arrays.asList(
-            new FeatureContexter<Memator>(),
-            new FeatureContexter<Prediction>(),
-            new FeatureContexter<Render>()
+            new FeatureContexter<>(Memator.instance),
+            new FeatureContexter<>(Prediction.instance),
+            new FeatureContexter<>(Render.instance)
         ));
     }
 
     private void intiGameContexts() {
         this.contexters.addAll(Arrays.asList(
-            new GameContexter<GameBC>(),
-            new GameContexter<GameKN>(),
-            new GameContexter<GameKNB>(),
-            new GameContexter<GameMOL>()
+            new GameContexter<>(GameBC.instance),
+            new GameContexter<>(GameKN.instance),
+            new GameContexter<>(GameKNB.instance),
+            new GameContexter<>(GameMOL.instance)
         ));
     }
 
     private void intiInformerContexts() {
         this.contexters.addAll(Arrays.asList(
-            new InformerContexter<Info>()
+            new InformerContexter<>(Info.instance)
         ));
     }
 
     private void intiSpeakerContexts() {
         this.contexters.addAll(Arrays.asList(
-            new SpeakerContexter<AI>(),
-            new SpeakerContexter<Bla>(),
-            new SpeakerContexter<Hyi>()
+            new SpeakerContexter<>(AI.instance),
+            new SpeakerContexter<>(Bla.instance),
+            new SpeakerContexter<>(Hyi.instance)
         ));
     }
 
