@@ -6,6 +6,10 @@ import java.util.List;
 
 public class Bla extends AbstractSpeaker {
 
+    private static Bla instance = new Bla();
+
+    private Bla() {}
+
     public static String getBlaString(String str) {
 
         StringBuilder bla = new StringBuilder();

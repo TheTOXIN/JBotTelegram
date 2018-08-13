@@ -11,7 +11,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import java.util.Arrays;
 import java.util.List;
 
-public class GameKNB extends AbstractGame{
+public class GameKNB extends AbstractGame {
 
     public static final String KEY_WORD = "knb";
 
@@ -38,6 +38,11 @@ public class GameKNB extends AbstractGame{
                     return knb;
             return null;
         }
+    }
+
+    private static GameKNB instance = new GameKNB();
+
+    private GameKNB() {
     }
 
     public String processGame(String mes) {

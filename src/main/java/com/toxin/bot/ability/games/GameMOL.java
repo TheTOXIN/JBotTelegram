@@ -1,6 +1,5 @@
 package com.toxin.bot.ability.games;
 
-
 import com.toxin.bot.other.Util;
 
 import java.util.List;
@@ -14,6 +13,11 @@ public class GameMOL extends AbstractGame {
     private boolean start = false;
     private int secret = 0;
     private int attempt = 0;
+
+    private static GameMOL instance = new GameMOL();
+
+    private GameMOL() {
+    }
 
     public String processGame(String text) {
         String answer = "";

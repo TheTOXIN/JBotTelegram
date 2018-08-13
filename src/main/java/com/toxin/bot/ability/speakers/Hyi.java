@@ -8,6 +8,10 @@ public class Hyi extends AbstractSpeaker {
     private static final String HU = "Ху";
     private static final String SYMBOLS = "йуеыаоэяиюё";
 
+    private static Hyi instance = new Hyi();
+
+    private Hyi() {}
+
     public static String getHyiString(String orig) {
         String word = convertToWord(orig);
 

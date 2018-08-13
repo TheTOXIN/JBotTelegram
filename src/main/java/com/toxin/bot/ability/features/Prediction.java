@@ -1,6 +1,5 @@
 package com.toxin.bot.ability.features;
 
-
 import com.toxin.bot.other.Util;
 
 import java.util.List;
@@ -8,6 +7,10 @@ import java.util.List;
 public class Prediction extends AbstractFeature {
 
     public static final String KEY_WORD = "вероятность";
+
+    private static Prediction instance = new Prediction();
+
+    private Prediction() {}
 
     public static String getForecast(String text) {
         StringBuilder forecast = new StringBuilder();

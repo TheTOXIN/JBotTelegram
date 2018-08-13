@@ -15,6 +15,10 @@ public class Render extends AbstractFeature {
 
     public static final String NAME = "render.png";
 
+    private static Render instance = new Render();
+
+    private Render() {}
+
     public static File render(String path) {
         File file = new File(path);
 

@@ -24,6 +24,11 @@ public class GameKN extends AbstractGame {
     private final int size = 3;
     private int[][] kn = new int[size][size];
 
+    private static GameKN instance = new GameKN();
+
+    private GameKN() {
+    }
+
     public String processGame(String mes) {
         String ans = "";
 
@@ -46,7 +51,7 @@ public class GameKN extends AbstractGame {
         updateKeyboard();
         matrixUpdate();
 
-        return "Щас я тебя сделаю! Играй этим - " + Emoji.KRESTIK.toString()  + "\n" + matrixToString();
+        return "Щас я тебя сделаю! Играй этим - " + Emoji.KRESTIK.toString() + "\n" + matrixToString();
     }
 
     private String stopGame() {

@@ -11,6 +11,10 @@ import java.util.List;
 
 public class AI extends AbstractSpeaker {
 
+    private static AI instance = new AI();
+
+    private AI() {}
+
     public static String getAnswer(String text) {
         String answer = "";
         text = refactor(text);

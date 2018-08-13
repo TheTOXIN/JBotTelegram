@@ -19,6 +19,10 @@ public class Memator extends AbstractFeature {
 
     private static final Logger log = Logger.getLogger(Memator.class);
 
+    private static Memator instance = new Memator();
+
+    private Memator() {}
+
     public static File getMem() {
         String path = SOURCE + "/new/" + Util.rand.nextInt(1000);
         String link;
