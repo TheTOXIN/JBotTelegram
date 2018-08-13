@@ -28,10 +28,10 @@ public class Collector {
     @Getter
     private List<AbstractContexter<? extends Ability>> contexters = new ArrayList<>();
 
-    @Getter
-    private List<AbstractTransf<? extends Ability>> transfers = new ArrayList<>();
+    private final Transmitter transmitter = new Transmitter();
 
     public Collector() {
+        this.transmitter.checkTransf();//автоматизировать
         intiContexts();
     }
 
@@ -46,51 +46,49 @@ public class Collector {
     public void processUpdate(Update update) {
         //ключевых слов может быть несколько, нужно учитывать все контексты для каждого абилти
         if (update.hasMessage()) {
-            this.transfers.addAll(
-                    this.contexters
-                            .stream()
-                            .filter(c -> c.itsMe(update))
-                            .map(AbstractContexter::generateTransf)
-                            .peek(t -> t.setUpdate(update))
-                            .collect(Collectors.toList())
-            );
+            this.contexters
+                .stream()
+                .filter(c -> c.itsMe(update))
+                .map(AbstractContexter::generateTransf)
+                .peek(t -> t.setUpdate(update))
+                .forEach(transmitter::pushIn);
         }
     }
 
     private void intiEventerContexts() {
         this.contexters.addAll(Arrays.asList(
-                new EventerContexter<Mock>()
+            new EventerContexter<Mock>()
         ));
     }
 
     private void intiFeatureContexts() {
         this.contexters.addAll(Arrays.asList(
-                new FeatureContexter<Memator>(),
-                new FeatureContexter<Prediction>(),
-                new FeatureContexter<Render>()
+            new FeatureContexter<Memator>(),
+            new FeatureContexter<Prediction>(),
+            new FeatureContexter<Render>()
         ));
     }
 
     private void intiGameContexts() {
         this.contexters.addAll(Arrays.asList(
-                new GameContexter<GameBC>(),
-                new GameContexter<GameKN>(),
-                new GameContexter<GameKNB>(),
-                new GameContexter<GameMOL>()
+            new GameContexter<GameBC>(),
+            new GameContexter<GameKN>(),
+            new GameContexter<GameKNB>(),
+            new GameContexter<GameMOL>()
         ));
     }
 
     private void intiInformerContexts() {
         this.contexters.addAll(Arrays.asList(
-                new InformerContexter<Info>()
+            new InformerContexter<Info>()
         ));
     }
 
     private void intiSpeakerContexts() {
         this.contexters.addAll(Arrays.asList(
-                new SpeakerContexter<AI>(),
-                new SpeakerContexter<Bla>(),
-                new SpeakerContexter<Hyi>()
+            new SpeakerContexter<AI>(),
+            new SpeakerContexter<Bla>(),
+            new SpeakerContexter<Hyi>()
         ));
     }
 

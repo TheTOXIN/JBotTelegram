@@ -7,6 +7,10 @@ import com.toxin.bot.transfer.EventerTransf;
 
 public class EventerHendler extends AbstractHandler<EventerTransf> {
 
+    public EventerHendler() {
+        super(EventerTransf.class);
+    }
+
     @Override
     public void prepareTransf(EventerTransf transf) {
 

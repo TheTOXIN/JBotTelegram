@@ -15,7 +15,7 @@ public class InformerContexter<A extends AbstractInformer> extends AbstractConte
 
     @Override
     public InformerTransf<A> generateTransf() {
-        return new InformerTransf<>();
+        return null;
     }
 
 }

@@ -1,6 +1,8 @@
 package com.toxin.bot.transfer;
 
 import com.toxin.bot.ability.Ability;
+import com.toxin.bot.requester.AbstractRequest;
+import com.toxin.bot.responser.AbstractRespons;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +12,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 public abstract class AbstractTransf<A extends Ability> {
 
     private A ability;
+    private AbstractRequest<? extends AbstractTransf> request;
 
     @Getter
     @Setter
@@ -24,5 +27,5 @@ public abstract class AbstractTransf<A extends Ability> {
     }
 
     public abstract A getAbility();
-
+    public abstract AbstractRequest<? extends AbstractTransf> getRequest();
 }

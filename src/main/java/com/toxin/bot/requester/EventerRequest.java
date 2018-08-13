@@ -6,6 +6,10 @@ import com.toxin.bot.transfer.EventerTransf;
 
 public class EventerRequest extends AbstractRequest<EventerTransf> {
 
+    public EventerRequest() {
+        super(EventerTransf.class);
+    }
+
     @Override
     public void accpetTranf(EventerTransf transf) {
 

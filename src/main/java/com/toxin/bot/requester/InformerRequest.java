@@ -6,6 +6,10 @@ import com.toxin.bot.transfer.InformerTransf;
 
 public class InformerRequest extends AbstractRequest<InformerTransf> {
 
+    public InformerRequest() {
+        super(InformerTransf.class);
+    }
+
     @Override
     public void accpetTranf(InformerTransf transf) {
 

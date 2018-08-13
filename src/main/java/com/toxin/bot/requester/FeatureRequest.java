@@ -6,6 +6,10 @@ import com.toxin.bot.transfer.FeatureTransf;
 
 public class FeatureRequest extends AbstractRequest<FeatureTransf> {
 
+    public FeatureRequest() {
+        super(FeatureTransf.class);
+    }
+
     @Override
     public void accpetTranf(FeatureTransf transf) {
 

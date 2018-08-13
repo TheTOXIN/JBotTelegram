@@ -6,6 +6,10 @@ import com.toxin.bot.transfer.SpeakerTransf;
 
 public class SpeakerRequest extends AbstractRequest<SpeakerTransf> {
 
+    public SpeakerRequest() {
+        super(SpeakerTransf.class);
+    }
+
     @Override
     public void accpetTranf(SpeakerTransf transf) {
 

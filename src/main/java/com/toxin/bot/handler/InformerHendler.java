@@ -7,6 +7,10 @@ import com.toxin.bot.transfer.InformerTransf;
 
 public class InformerHendler extends AbstractHandler<InformerTransf> {
 
+    public InformerHendler() {
+        super(InformerTransf.class);
+    }
+
     @Override
     public void prepareTransf(InformerTransf transf) {
 

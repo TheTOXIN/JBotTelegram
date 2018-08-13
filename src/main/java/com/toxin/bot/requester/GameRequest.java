@@ -6,6 +6,10 @@ import com.toxin.bot.transfer.GameTransf;
 
 public class GameRequest extends AbstractRequest<GameTransf> {
 
+    public GameRequest() {
+        super(GameTransf.class);
+    }
+
     @Override
     public void accpetTranf(GameTransf transf) {
 

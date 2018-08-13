@@ -13,7 +13,6 @@ public class Bot extends TelegramLongPollingBot {
     private static final Logger log = Logger.getLogger(Bot.class);
 
     private Collector collector = new Collector();
-    private Transmitter transmitter = new Transmitter();
 
     public Bot(DefaultBotOptions options) {
         super(options);
@@ -21,7 +20,7 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        collector.processUpdate(update);
+        this.collector.processUpdate(update);
     }
 
     @Override
