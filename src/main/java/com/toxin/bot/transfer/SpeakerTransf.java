@@ -12,9 +12,4 @@ public class SpeakerTransf <A extends AbstractSpeaker> extends AbstractTransf<A>
         super(update, ability);
     }
 
-    @Override
-    public AbstractRequest<SpeakerTransf> getRequest() {
-        return new SpeakerRequest();
-    }
-
 }

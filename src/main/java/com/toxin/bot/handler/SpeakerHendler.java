@@ -12,7 +12,7 @@ public class SpeakerHendler extends AbstractHandler<SpeakerTransf> {
     }
 
     @Override
-    public void prepareTransf(SpeakerTransf transf) {
+    public void performTransf(SpeakerTransf transf) {
 
     }
 

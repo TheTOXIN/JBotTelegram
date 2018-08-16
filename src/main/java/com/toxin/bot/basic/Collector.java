@@ -1,6 +1,6 @@
 package com.toxin.bot.basic;
 
-import com.toxin.bot.ability.Ability;
+import com.toxin.bot.ability.AbstractAbility;
 import com.toxin.bot.ability.eventers.Mock;
 import com.toxin.bot.ability.features.Memator;
 import com.toxin.bot.ability.features.Prediction;
@@ -14,22 +14,19 @@ import com.toxin.bot.ability.speakers.AI;
 import com.toxin.bot.ability.speakers.Bla;
 import com.toxin.bot.ability.speakers.Hyi;
 import com.toxin.bot.contexter.*;
-import com.toxin.bot.transfer.*;
 import lombok.Getter;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
 
 public class Collector {
 
     @Getter
-    private List<AbstractContexter<? extends Ability>> contexters = new ArrayList<>();
+    private List<AbstractContexter<? extends AbstractAbility>> contexters = new ArrayList<>();
 
-    private final Transmitter transmitter = new Transmitter();
+    private final Transmitter transmitter = Transmitter.INSTANCE;
 
     public Collector() {
         this.transmitter.checkTransf();//автоматизировать

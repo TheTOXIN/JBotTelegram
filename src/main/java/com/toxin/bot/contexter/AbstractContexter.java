@@ -1,15 +1,13 @@
 package com.toxin.bot.contexter;
 
 
-import com.toxin.bot.ability.Ability;
-import com.toxin.bot.ability.eventers.Mock;
+import com.toxin.bot.ability.AbstractAbility;
 import com.toxin.bot.transfer.AbstractTransf;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.*;
-import java.util.function.Supplier;
 
-public abstract class AbstractContexter<A extends Ability> {
+public abstract class AbstractContexter<A extends AbstractAbility> {
 
     protected HashMap<A, List<String>> context = new HashMap<>();
     protected A ability;
@@ -24,7 +22,6 @@ public abstract class AbstractContexter<A extends Ability> {
     public void pushContext(A ability, String text) {
         this.context.get(ability).add(text);
     }
-
     public List<String> pullContext(A ability) {
         return this.context.get(ability);
     }

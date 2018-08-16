@@ -14,7 +14,7 @@ public abstract class AbstractHandler<T extends AbstractTransf> {
         this.respons = this.getRespons();
     }
 
-    public abstract void prepareTransf(T transf);
+    public abstract void performTransf(T transf);
     public abstract AbstractRespons<T> getRespons();
 
 }

@@ -12,7 +12,7 @@ public class EventerHendler extends AbstractHandler<EventerTransf> {
     }
 
     @Override
-    public void prepareTransf(EventerTransf transf) {
+    public void performTransf(EventerTransf transf) {
 
     }
 

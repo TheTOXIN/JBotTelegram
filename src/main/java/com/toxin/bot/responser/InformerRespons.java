@@ -11,7 +11,7 @@ public class InformerRespons extends AbstractRespons<InformerTransf> {
 
     @Override
     public void sendTransf(InformerTransf transf) {
-
+        super.transmitter.pushOut(transf);
     }
 
 }

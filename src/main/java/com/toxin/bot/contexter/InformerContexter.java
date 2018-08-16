@@ -12,7 +12,12 @@ public class InformerContexter<A extends AbstractInformer> extends AbstractConte
 
     @Override
     public boolean itsMe(Update update) {
-        return true;
+        if (update.hasMessage()) {
+            return ability.getKeyWords()
+                    .stream()
+                    .anyMatch(key -> update.getMessage().getText().contains(key));
+        }
+        return false;
     }
 
     @Override

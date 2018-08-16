@@ -12,7 +12,7 @@ public class FeatureHendler extends AbstractHandler<FeatureTransf> {
     }
 
     @Override
-    public void prepareTransf(FeatureTransf transf) {
+    public void performTransf(FeatureTransf transf) {
 
     }
 

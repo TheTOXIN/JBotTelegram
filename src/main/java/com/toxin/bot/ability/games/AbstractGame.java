@@ -1,7 +1,7 @@
 package com.toxin.bot.ability.games;
 
-import com.toxin.bot.ability.Ability;
+import com.toxin.bot.ability.AbstractAbility;
 
-public abstract class AbstractGame implements Ability {
+public abstract class AbstractGame extends AbstractAbility {
 
 }

@@ -12,7 +12,7 @@ public class InformerRequest extends AbstractRequest<InformerTransf> {
 
     @Override
     public void accpetTranf(InformerTransf transf) {
-
+        getHandler().performTransf(transf);
     }
 
     @Override

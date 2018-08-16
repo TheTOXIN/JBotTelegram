@@ -16,6 +16,8 @@ public class Initializer {
     private static final String CONFIG_NOT_FOUND = "CONFIG NOT FOUND";
     private static final String BOT_NOT_REGISTER = "BOT NOT REGISTER";
 
+    public static Bot BOT;
+
     public void init() {
         loadConfig();
         runBot();
@@ -34,10 +36,9 @@ public class Initializer {
         TelegramBotsApi botsApi = new TelegramBotsApi();
 
         try {
-            if (Config.PROXY_WORK)
-                botsApi.registerBot(new Bot(getOptions()));
-            else
-                botsApi.registerBot(new Bot());
+            if (Config.PROXY_WORK) BOT = new Bot(getOptions());
+            else BOT = new Bot();
+            botsApi.registerBot(BOT);
         } catch (TelegramApiRequestException e) {
             log.error(BOT_NOT_REGISTER);
         }

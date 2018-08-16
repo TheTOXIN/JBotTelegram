@@ -8,11 +8,12 @@ import com.toxin.bot.ability.games.GameMOL;
 import com.toxin.bot.other.Consts;
 import com.toxin.bot.other.Emoji;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Info extends AbstractInformer {
 
-    private final static StringBuilder sb = new StringBuilder()
+    private final static StringBuilder information = new StringBuilder()
             .append("Хувствуйсте, я - БотХуиБот ")
             .append(Emoji.ROCK.toString())
             .append("\nВот чё я умею:")
@@ -32,13 +33,21 @@ public class Info extends AbstractInformer {
     private Info() {}
 
     @Override
+    public String getInfo() {
+        return information.toString();
+    }
+
+    @Override
     public List<String> getKeyWords() {
-        return null;
+        return Arrays.asList(
+                "help",
+                "info"
+        );
     }
 
     @Override
     public String getId() {
-        return null;
+        return "help";
     }
 
 }

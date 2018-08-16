@@ -2,7 +2,6 @@ package com.toxin.bot.basic;
 
 import com.toxin.bot.other.Config;
 import lombok.NoArgsConstructor;
-import org.apache.log4j.Logger;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.*;
@@ -10,7 +9,6 @@ import org.telegram.telegrambots.meta.api.objects.*;
 
 @NoArgsConstructor
 public class Bot extends TelegramLongPollingBot {
-    private static final Logger log = Logger.getLogger(Bot.class);
 
     private Collector collector = new Collector();
 

@@ -12,7 +12,7 @@ public class GameHendler extends AbstractHandler<GameTransf> {
     }
 
     @Override
-    public void prepareTransf(GameTransf transf) {
+    public void performTransf(GameTransf transf) {
 
     }
 
