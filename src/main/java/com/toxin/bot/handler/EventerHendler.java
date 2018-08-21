@@ -1,7 +1,5 @@
 package com.toxin.bot.handler;
 
-import com.toxin.bot.responser.AbstractRespons;
-import com.toxin.bot.responser.EventerRespons;
 import com.toxin.bot.transfer.EventerTransf;
 
 
@@ -12,13 +10,8 @@ public class EventerHendler extends AbstractHandler<EventerTransf> {
     }
 
     @Override
-    public void performTransf(EventerTransf transf) {
+    public void handleTransf(EventerTransf transf) {
 
-    }
-
-    @Override
-    public AbstractRespons<EventerTransf> getRespons() {
-        return new EventerRespons();
     }
 
 }

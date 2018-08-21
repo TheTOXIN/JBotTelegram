@@ -1,18 +1,13 @@
-package com.toxin.bot.requester;
+package com.toxin.bot.performer;
 
 import com.toxin.bot.handler.AbstractHandler;
 import com.toxin.bot.handler.InformerHendler;
 import com.toxin.bot.transfer.InformerTransf;
 
-public class InformerRequest extends AbstractRequest<InformerTransf> {
+public class InformerPerform extends AbstractPerform<InformerTransf> {
 
-    public InformerRequest() {
+    public InformerPerform() {
         super(InformerTransf.class);
-    }
-
-    @Override
-    public void accpetTranf(InformerTransf transf) {
-        getHandler().performTransf(transf);
     }
 
     @Override

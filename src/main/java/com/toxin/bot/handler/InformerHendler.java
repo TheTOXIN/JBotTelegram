@@ -1,8 +1,6 @@
 package com.toxin.bot.handler;
 
 import com.toxin.bot.ability.informers.AbstractInformer;
-import com.toxin.bot.responser.AbstractRespons;
-import com.toxin.bot.responser.InformerRespons;
 import com.toxin.bot.transfer.InformerTransf;
 
 
@@ -13,15 +11,10 @@ public class InformerHendler extends AbstractHandler<InformerTransf> {
     }
 
     @Override
-    public void performTransf(InformerTransf transf) {
-        AbstractInformer ability = (AbstractInformer) transf.getAbility();
+    public void handleTransf(InformerTransf transf) {
+        AbstractInformer ability = (AbstractInformer) transf.getAbility();//TODO Hmmm
         transf.setInformation(ability.getInfo());
-        getRespons().sendTransf(transf);
-    }
-
-    @Override
-    public AbstractRespons<InformerTransf> getRespons() {
-        return new InformerRespons();
+        transmitter.pushOut(transf);
     }
 
 }

@@ -1,7 +1,5 @@
 package com.toxin.bot.handler;
 
-import com.toxin.bot.responser.AbstractRespons;
-import com.toxin.bot.responser.FeatureRespons;
 import com.toxin.bot.transfer.FeatureTransf;
 
 
@@ -12,13 +10,8 @@ public class FeatureHendler extends AbstractHandler<FeatureTransf> {
     }
 
     @Override
-    public void performTransf(FeatureTransf transf) {
+    public void handleTransf(FeatureTransf transf) {
 
-    }
-
-    @Override
-    public AbstractRespons<FeatureTransf> getRespons() {
-        return new FeatureRespons();
     }
 
 }

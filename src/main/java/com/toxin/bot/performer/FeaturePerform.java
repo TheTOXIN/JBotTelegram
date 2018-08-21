@@ -1,18 +1,13 @@
-package com.toxin.bot.requester;
+package com.toxin.bot.performer;
 
 import com.toxin.bot.handler.AbstractHandler;
 import com.toxin.bot.handler.FeatureHendler;
 import com.toxin.bot.transfer.FeatureTransf;
 
-public class FeatureRequest extends AbstractRequest<FeatureTransf> {
+public class FeaturePerform extends AbstractPerform<FeatureTransf> {
 
-    public FeatureRequest() {
+    public FeaturePerform() {
         super(FeatureTransf.class);
-    }
-
-    @Override
-    public void accpetTranf(FeatureTransf transf) {
-
     }
 
     @Override

@@ -1,18 +1,13 @@
-package com.toxin.bot.requester;
+package com.toxin.bot.performer;
 
 import com.toxin.bot.handler.AbstractHandler;
 import com.toxin.bot.handler.EventerHendler;
 import com.toxin.bot.transfer.EventerTransf;
 
-public class EventerRequest extends AbstractRequest<EventerTransf> {
+public class EventerPerform extends AbstractPerform<EventerTransf> {
 
-    public EventerRequest() {
+    public EventerPerform() {
         super(EventerTransf.class);
-    }
-
-    @Override
-    public void accpetTranf(EventerTransf transf) {
-
     }
 
     @Override

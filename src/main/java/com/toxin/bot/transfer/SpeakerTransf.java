@@ -1,8 +1,6 @@
 package com.toxin.bot.transfer;
 
 import com.toxin.bot.ability.speakers.AbstractSpeaker;
-import com.toxin.bot.requester.AbstractRequest;
-import com.toxin.bot.requester.SpeakerRequest;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 

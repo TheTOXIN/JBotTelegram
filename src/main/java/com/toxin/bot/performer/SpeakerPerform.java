@@ -1,18 +1,13 @@
-package com.toxin.bot.requester;
+package com.toxin.bot.performer;
 
 import com.toxin.bot.handler.AbstractHandler;
 import com.toxin.bot.handler.SpeakerHendler;
 import com.toxin.bot.transfer.SpeakerTransf;
 
-public class SpeakerRequest extends AbstractRequest<SpeakerTransf> {
+public class SpeakerPerform extends AbstractPerform<SpeakerTransf> {
 
-    public SpeakerRequest() {
+    public SpeakerPerform() {
         super(SpeakerTransf.class);
-    }
-
-    @Override
-    public void accpetTranf(SpeakerTransf transf) {
-
     }
 
     @Override

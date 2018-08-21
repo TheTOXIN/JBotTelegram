@@ -26,10 +26,8 @@ public class Collector {
     @Getter
     private List<AbstractContexter<? extends AbstractAbility>> contexters = new ArrayList<>();
 
-    private final Transmitter transmitter = Transmitter.INSTANCE;
-
     public Collector() {
-        this.transmitter.checkTransf();//автоматизировать
+        Transmitter.INSTANCE.checkTransf();//автоматизировать
         intiContexts();
     }
 
@@ -43,13 +41,11 @@ public class Collector {
 
     public void processUpdate(Update update) {
         //ключевых слов может быть несколько, нужно учитывать все контексты для каждого абилти
-        if (update.hasMessage()) {
-            this.contexters
-                .stream()
-                .filter(c -> c.itsMe(update))
-                .map(c -> c.generateTransf(update))
-                .forEach(transmitter::pushIn);
-        }
+        this.contexters
+            .stream()
+            .filter(c -> c.itsMe(update))
+            .map(c -> c.generateTransf(update))
+            .forEach(Transmitter.INSTANCE::pushIn);
     }
 
     private void intiEventerContexts() {

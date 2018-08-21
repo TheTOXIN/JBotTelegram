@@ -1,8 +1,7 @@
 package com.toxin.bot.basic;
 
-import com.toxin.bot.ability.AbstractAbility;
 import com.toxin.bot.executor.*;
-import com.toxin.bot.requester.*;
+import com.toxin.bot.performer.*;
 import com.toxin.bot.transfer.*;
 
 import java.util.LinkedList;
@@ -13,26 +12,26 @@ public class Transmitter { //придумать механизм который 
 
     public final static Transmitter INSTANCE = new Transmitter();
 
-    private Queue<AbstractTransf<? extends AbstractAbility>> in = new LinkedList<>();
-    private Queue<AbstractTransf<? extends AbstractAbility>> out = new LinkedList<>();
+    private Queue<AbstractTransf> in = new LinkedList<>();
+    private Queue<AbstractTransf> out = new LinkedList<>();
 
     private Transmitter() {
         //SINGLETON
     }
 
-    public void pushIn(AbstractTransf<? extends AbstractAbility> transf) {
+    public void pushIn(AbstractTransf transf) {
         this.in.offer(transf);
     }
 
-    public void pushOut(AbstractTransf<? extends AbstractAbility> transf) {
+    public void pushOut(AbstractTransf transf) {
         this.out.offer(transf);
     }
 
-    public AbstractTransf<? extends AbstractAbility> pullIn() {
+    public AbstractTransf pullIn() {
         return this.in.remove();
     }
 
-    public AbstractTransf<? extends AbstractAbility> pullOut() {
+    public AbstractTransf pullOut() {
         return this.out.remove();
     }
 
@@ -40,7 +39,7 @@ public class Transmitter { //придумать механизм который 
         new Thread(() -> {
             while (true) {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(300);
                     if (!in.isEmpty()) inTransf(pullIn());
                     if (!out.isEmpty()) outTransf((pullOut()));
                 } catch (InterruptedException e) {
@@ -54,15 +53,15 @@ public class Transmitter { //придумать механизм который 
 
     private void inTransf(AbstractTransf transf) {
         if (transf instanceof EventerTransf) {
-            new EventerRequest().accpetTranf((EventerTransf) transf);
+            new EventerPerform().performTransf((EventerTransf) transf);
         } else if (transf instanceof FeatureTransf) {
-            new FeatureRequest().accpetTranf((FeatureTransf) transf);
+            new FeaturePerform().performTransf((FeatureTransf) transf);
         } else if (transf instanceof GameTransf) {
-            new GameRequest().accpetTranf((GameTransf) transf);
+            new GamePerform().performTransf((GameTransf) transf);
         } else if (transf instanceof InformerTransf) {
-            new InformerRequest().accpetTranf((InformerTransf) transf);
+            new InformerPerform().performTransf((InformerTransf) transf);
         } else if (transf instanceof SpeakerTransf) {
-            new SpeakerRequest().accpetTranf((SpeakerTransf) transf);
+            new SpeakerPerform().performTransf((SpeakerTransf) transf);
         } else {
             System.out.println("I made my mistaaaaakess...");
         }
@@ -80,7 +79,7 @@ public class Transmitter { //придумать механизм который 
         } else if (transf instanceof SpeakerTransf) {
             new SpeakerExecutor().executeTransf((SpeakerTransf) transf);
         } else {
-            System.out.println("I made my mistaaaaakess...");
+            System.out.println("I’ve got no where to run");
         }
     }
 
