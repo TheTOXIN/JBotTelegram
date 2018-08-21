@@ -1,10 +1,9 @@
 package com.toxin.bot.basic;
 
 import com.toxin.bot.ability.AbstractAbility;
+import com.toxin.bot.executor.*;
 import com.toxin.bot.requester.*;
 import com.toxin.bot.transfer.*;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -70,21 +69,18 @@ public class Transmitter { //придумать механизм который 
     }
     //ЕБАТЬ ЭТО РАБОТАЕТ (но надо наверное убрать логику с ин аут трансф)
     private void outTransf(AbstractTransf transf) {
-        try {
-            if (transf instanceof EventerTransf) {
-            } else if (transf instanceof FeatureTransf) {
-            } else if (transf instanceof GameTransf) {
-            } else if (transf instanceof InformerTransf) {
-                Initializer.BOT.execute(new SendMessage(
-                        transf.getUpdate().getMessage().getChatId(),
-                        ((InformerTransf) transf).getInformation()
-                ));
-            } else if (transf instanceof SpeakerTransf) {
-            } else {
-                System.out.println("The night goes on");
-            }
-        } catch (TelegramApiException e) {
-            System.out.println("As I’m fading away");
+        if (transf instanceof EventerTransf) {
+            new EventerExecutor().executeTransf((EventerTransf) transf);
+        } else if (transf instanceof FeatureTransf) {
+            new FeatureExecutor().executeTransf((FeatureTransf) transf);
+        } else if (transf instanceof GameTransf) {
+            new GameExecutor().executeTransf((GameTransf) transf);
+        } else if (transf instanceof InformerTransf) {
+            new InformerExecutor().executeTransf((InformerTransf) transf);
+        } else if (transf instanceof SpeakerTransf) {
+            new SpeakerExecutor().executeTransf((SpeakerTransf) transf);
+        } else {
+            System.out.println("I made my mistaaaaakess...");
         }
     }
 
