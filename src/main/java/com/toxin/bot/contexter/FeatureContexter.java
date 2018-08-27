@@ -14,8 +14,8 @@ public class FeatureContexter<A extends AbstractFeature> extends AbstractContext
     }
 
     @Override
-    public boolean itsMe(Update update) {
-        return false;
+    public void computeScore(Update update) {
+
     }
 
     @Override

@@ -12,8 +12,8 @@ public class EventerContexter<A extends AbstractEventer> extends AbstractContext
     }
 
     @Override
-    public boolean itsMe(Update update) {
-        return false;
+    public void computeScore(Update update) {
+
     }
 
     @Override

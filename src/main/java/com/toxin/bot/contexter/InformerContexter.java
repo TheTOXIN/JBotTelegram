@@ -4,6 +4,7 @@ import com.toxin.bot.ability.informers.AbstractInformer;
 import com.toxin.bot.transfer.InformerTransf;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+
 public class InformerContexter<A extends AbstractInformer> extends AbstractContexter<A> {
 
     public InformerContexter(A ability) {
@@ -11,13 +12,14 @@ public class InformerContexter<A extends AbstractInformer> extends AbstractConte
     }
 
     @Override
-    public boolean itsMe(Update update) {
+    public void computeScore(Update update) {
         if (update.hasMessage()) {
-            return ability.getKeyWords()
-                    .stream()
-                    .anyMatch(key -> update.getMessage().getText().contains(key));
+            String text = update.getMessage().getText();
+            ability.getKeyWords()
+                .stream()
+                .filter(text::contains)
+                .forEach(word -> super.addScore());
         }
-        return false;
     }
 
     @Override

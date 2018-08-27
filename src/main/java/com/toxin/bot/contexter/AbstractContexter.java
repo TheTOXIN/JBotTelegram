@@ -3,27 +3,32 @@ package com.toxin.bot.contexter;
 
 import com.toxin.bot.ability.AbstractAbility;
 import com.toxin.bot.transfer.AbstractTransf;
+import lombok.Getter;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public abstract class AbstractContexter<A extends AbstractAbility> {
 
-    protected HashMap<A, List<String>> context = new HashMap<>();
+    @Getter
+    private int score;
+
+    protected List<String> context = new ArrayList<>();
     protected A ability;
 
     public AbstractContexter(A ability) {
         this.ability = ability;
     }
 
-    public abstract boolean itsMe(Update update);
+    public abstract void computeScore(Update update);
     public abstract AbstractTransf<A> generateTransf(Update update);
 
-    public void pushContext(A ability, String text) {
-        this.context.get(ability).add(text);
-    }
-    public List<String> pullContext(A ability) {
-        return this.context.get(ability);
-    }
+    protected void addScore() { this.score++; }
+    protected void delScore() { this.score--; }
+
+    public void clearScore() { this.score = 0; }
+    public boolean haveScore() { return this.score > 0; }
 
 }

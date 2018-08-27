@@ -4,7 +4,7 @@ import com.toxin.bot.handler.AbstractHandler;
 import com.toxin.bot.transfer.AbstractTransf;
 
 
-public abstract class AbstractPerform<T extends AbstractTransf> {
+public abstract class AbstractPerform<T extends AbstractTransf> { //use for process transf
 
     private Class<T> clazz;
     private AbstractHandler<T> handler;

@@ -2,6 +2,7 @@ package com.toxin.bot.ability.speakers;
 
 import com.toxin.bot.other.Util;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Bla extends AbstractSpeaker {
@@ -10,7 +11,12 @@ public class Bla extends AbstractSpeaker {
 
     private Bla() {}
 
-    public static String getBlaString(String str) {
+    @Override
+    public String getAnswer(String text) {
+        return getBlaString(text);
+    }
+
+    private String getBlaString(String str) {
 
         StringBuilder bla = new StringBuilder();
 
@@ -25,7 +31,7 @@ public class Bla extends AbstractSpeaker {
         return bla.toString();
     }
 
-    private static char convertToBla(char c) {
+    private char convertToBla(char c) {
         char res;
 
         switch (c)
@@ -74,12 +80,14 @@ public class Bla extends AbstractSpeaker {
 
     @Override
     public List<String> getKeyWords() {
-        return null;
+        return Arrays.asList(
+            "бот"
+        );
     }
 
     @Override
     public String getId() {
-        return null;
+        return "bla";
     }
 
 }

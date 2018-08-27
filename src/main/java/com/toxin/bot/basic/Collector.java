@@ -19,6 +19,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Collector {
@@ -31,7 +32,8 @@ public class Collector {
         intiContexts();
     }
 
-    public void intiContexts() {
+    private void intiContexts() {
+        //в рот ебал я эти синглтоны
         intiEventerContexts();
         intiFeatureContexts();
         intiGameContexts();
@@ -40,12 +42,15 @@ public class Collector {
     }
 
     public void processUpdate(Update update) {
-        //ключевых слов может быть несколько, нужно учитывать все контексты для каждого абилти
         this.contexters
             .stream()
-            .filter(c -> c.itsMe(update))
-            .map(c -> c.generateTransf(update))
-            .forEach(Transmitter.INSTANCE::pushIn);
+            .peek(c -> c.computeScore(update))
+            .filter(AbstractContexter::haveScore)
+            .max(Comparator.comparingInt(AbstractContexter::getScore))
+            .ifPresent(contexter -> {
+                Transmitter.INSTANCE.pushIn(contexter.generateTransf(update));
+                contexter.clearScore();
+            });
     }
 
     private void intiEventerContexts() {

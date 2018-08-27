@@ -7,6 +7,7 @@ import ai.api.model.AIRequest;
 import ai.api.model.AIResponse;
 import com.toxin.bot.other.Config;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class AI extends AbstractSpeaker {
@@ -15,9 +16,14 @@ public class AI extends AbstractSpeaker {
 
     private AI() {}
 
-    public static String getAnswer(String text) {
+    @Override
+    public String getAnswer(String text) {
+        return getAiAnswer(text);
+    }
+
+    private String getAiAnswer(String text) {
         String answer = "";
-        text = refactor(text);
+        text = text.replaceFirst("бот", "").trim();
 
         if (text.equals("") || text.isEmpty()) {
             return answer;
@@ -37,18 +43,16 @@ public class AI extends AbstractSpeaker {
         return answer;
     }
 
-    private static String refactor(String str) {
-        return str.replaceFirst("бот", "").trim();
-    }
-
     @Override
     public List<String> getKeyWords() {
-        return null;
+        return Arrays.asList(
+            "бот"
+        );
     }
 
     @Override
     public String getId() {
-        return null;
+        return "ai";
     }
 
 }

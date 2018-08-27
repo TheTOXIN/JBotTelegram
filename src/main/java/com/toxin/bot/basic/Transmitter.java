@@ -66,7 +66,7 @@ public class Transmitter { //придумать механизм который 
             System.out.println("I made my mistaaaaakess...");
         }
     }
-    //ЕБАТЬ ЭТО РАБОТАЕТ (но надо наверное убрать логику с ин аут трансф)
+    //TODO ЕБАТЬ ЭТО РАБОТАЕТ (но надо наверное убрать логику с ин аут трансф)
     private void outTransf(AbstractTransf transf) {
         if (transf instanceof EventerTransf) {
             new EventerExecutor().executeTransf((EventerTransf) transf);

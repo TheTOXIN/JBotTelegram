@@ -12,8 +12,8 @@ public class GameContexter<A extends AbstractGame> extends AbstractContexter<A> 
     }
 
     @Override
-    public boolean itsMe(Update update) {
-        return false;
+    public void computeScore(Update update) {
+
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.toxin.bot.ability.speakers;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -10,9 +11,15 @@ public class Hyi extends AbstractSpeaker {
 
     public static final Hyi instance = new Hyi();
 
-    private Hyi() {}
+    private Hyi() {
+    }
 
-    public static String getHyiString(String orig) {
+    @Override
+    public String getAnswer(String text) {
+        return getHyiString(text);
+    }
+
+    private String getHyiString(String orig) {
         String word = convertToWord(orig);
 
         if (word.length() <= 2 || !isWord(word))
@@ -92,12 +99,14 @@ public class Hyi extends AbstractSpeaker {
 
     @Override
     public List<String> getKeyWords() {
-        return null;
+        return Arrays.asList(
+            "бот"
+        );
     }
 
     @Override
     public String getId() {
-        return null;
+        return "hyi";
     }
 
 }
