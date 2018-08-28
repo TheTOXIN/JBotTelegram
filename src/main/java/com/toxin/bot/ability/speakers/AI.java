@@ -5,6 +5,7 @@ import ai.api.AIDataService;
 import ai.api.AIServiceException;
 import ai.api.model.AIRequest;
 import ai.api.model.AIResponse;
+import com.toxin.bot.basic.IDS;
 import com.toxin.bot.other.Config;
 
 import java.util.Arrays;
@@ -14,7 +15,8 @@ public class AI extends AbstractSpeaker {
 
     public static final AI instance = new AI();
 
-    private AI() {}
+    private AI() {
+    }
 
     @Override
     public String getAnswer(String text) {
@@ -46,13 +48,15 @@ public class AI extends AbstractSpeaker {
     @Override
     public List<String> getKeyWords() {
         return Arrays.asList(
-            "бот"
+            "бот",
+            "?",
+            "эй"
         );
     }
 
     @Override
     public String getId() {
-        return "ai";
+        return IDS.AIG;
     }
 
 }

@@ -8,4 +8,6 @@ public abstract class AbstractAbility {
 
     public abstract String getId();
 
+    //TODO вынести сюда контекстер?
+
 }

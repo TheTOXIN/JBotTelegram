@@ -15,7 +15,6 @@ public abstract class AbstractContexter<A extends AbstractAbility> {
     @Getter
     private int score;
 
-    protected List<String> context = new ArrayList<>();
     protected A ability;
 
     public AbstractContexter(A ability) {
@@ -26,7 +25,7 @@ public abstract class AbstractContexter<A extends AbstractAbility> {
     public abstract AbstractTransf<A> generateTransf(Update update);
 
     protected void addScore() { this.score++; }
-    protected void delScore() { this.score--; }
+    protected void delScore() { if (this.score > 0) this.score--; }
 
     public void clearScore() { this.score = 0; }
     public boolean haveScore() { return this.score > 0; }

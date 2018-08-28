@@ -1,5 +1,6 @@
 package com.toxin.bot.ability.speakers;
 
+import com.toxin.bot.basic.IDS;
 import com.toxin.bot.other.Util;
 
 import java.util.Arrays;
@@ -34,7 +35,7 @@ public class Bla extends AbstractSpeaker {
     private char convertToBla(char c) {
         char res;
 
-        switch (c)
+        switch (c)//TODO HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM&&&&&&&&&&&&&&&&&&&?????????????????????
         {
             case 'й': res = 'и'; break;
             case 'ц': res = 'с'; break;
@@ -81,13 +82,14 @@ public class Bla extends AbstractSpeaker {
     @Override
     public List<String> getKeyWords() {
         return Arrays.asList(
-            "бот"
+            "бот",
+            "бла"
         );
     }
 
     @Override
     public String getId() {
-        return "bla";
+        return IDS.BLA;
     }
 
 }

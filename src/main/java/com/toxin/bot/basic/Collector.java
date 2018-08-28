@@ -1,7 +1,7 @@
 package com.toxin.bot.basic;
 
 import com.toxin.bot.ability.AbstractAbility;
-import com.toxin.bot.ability.eventers.Mock;
+import com.toxin.bot.ability.eventers.Remeber;
 import com.toxin.bot.ability.features.Memator;
 import com.toxin.bot.ability.features.Prediction;
 import com.toxin.bot.ability.features.Render;
@@ -55,7 +55,7 @@ public class Collector {
 
     private void intiEventerContexts() {
         this.contexters.addAll(Arrays.asList(
-            new EventerContexter<>(Mock.instance)
+            new EventerContexter<>(Remeber.instance)
         ));
     }
 

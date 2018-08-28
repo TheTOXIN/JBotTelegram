@@ -1,5 +1,7 @@
 package com.toxin.bot.ability.speakers;
 
+import com.toxin.bot.basic.IDS;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -100,13 +102,14 @@ public class Hyi extends AbstractSpeaker {
     @Override
     public List<String> getKeyWords() {
         return Arrays.asList(
-            "бот"
+            "бот",
+            "ху"
         );
     }
 
     @Override
     public String getId() {
-        return "hyi";
+        return IDS.HYI;
     }
 
 }

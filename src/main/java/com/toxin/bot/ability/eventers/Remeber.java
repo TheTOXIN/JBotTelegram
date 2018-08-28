@@ -3,11 +3,11 @@ package com.toxin.bot.ability.eventers;
 
 import java.util.List;
 
-public class Mock extends AbstractEventer {
+public class Remeber extends AbstractEventer {
 
-    public static final Mock instance = new Mock();
+    public static final Remeber instance = new Remeber();
 
-    private Mock() {}
+    private Remeber() {}
 
     @Override
     public List<String> getKeyWords() {
