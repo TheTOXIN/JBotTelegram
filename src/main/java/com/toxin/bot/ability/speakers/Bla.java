@@ -75,7 +75,7 @@ public class Bla extends AbstractSpeaker {
         return res;
     }
 
-    private static boolean isMagick(String str) {
+    private boolean isMagick(String str) {
         return Util.rand.nextInt(str.length()) > str.length() / 2;
     }
 

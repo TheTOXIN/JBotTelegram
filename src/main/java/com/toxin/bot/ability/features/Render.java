@@ -1,5 +1,7 @@
 package com.toxin.bot.ability.features;
 
+import com.toxin.bot.basic.IDS;
+import com.toxin.bot.transfer.FeatureTransf;
 import org.apache.log4j.Logger;
 
 import javax.imageio.ImageIO;
@@ -7,6 +9,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 public class Render extends AbstractFeature {
@@ -18,6 +21,11 @@ public class Render extends AbstractFeature {
     public static final Render instance = new Render();
 
     private Render() {}
+
+    @Override
+    public void processTransf(FeatureTransf transf) {
+
+    }
 
     public static File render(String path) {
         File file = new File(path);
@@ -101,12 +109,14 @@ public class Render extends AbstractFeature {
 
     @Override
     public List<String> getKeyWords() {
-        return null;
+        return Arrays.asList(
+            "обработай"
+        );
     }
 
     @Override
     public String getId() {
-        return null;
+        return IDS.RND;
     }
 
 }

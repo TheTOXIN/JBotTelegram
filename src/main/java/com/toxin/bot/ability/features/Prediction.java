@@ -1,7 +1,10 @@
 package com.toxin.bot.ability.features;
 
+import com.toxin.bot.basic.IDS;
 import com.toxin.bot.other.Util;
+import com.toxin.bot.transfer.FeatureTransf;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Prediction extends AbstractFeature {
@@ -11,6 +14,11 @@ public class Prediction extends AbstractFeature {
     public static final Prediction instance = new Prediction();
 
     private Prediction() {}
+
+    @Override
+    public void processTransf(FeatureTransf transf) {
+
+    }
 
     public static String getForecast(String text) {
         StringBuilder forecast = new StringBuilder();
@@ -30,12 +38,14 @@ public class Prediction extends AbstractFeature {
 
     @Override
     public List<String> getKeyWords() {
-        return null;
+        return Arrays.asList(
+            "вероятность"
+        );
     }
 
     @Override
     public String getId() {
-        return null;
+        return IDS.PRD;
     }
 
 }

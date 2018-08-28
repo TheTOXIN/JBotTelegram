@@ -65,11 +65,11 @@ public class Hyi extends AbstractSpeaker {
         return word;
     }
 
-    private static String deleteFirst(String str) {
+    private String deleteFirst(String str) {
         return str.substring(1, str.length());
     }
 
-    private static boolean isGlas(char c) {
+    private boolean isGlas(char c) {
         for (int i = 0; i < SYMBOLS.length(); i++) {
             if (SYMBOLS.charAt(i) == c) {
                 return true;
@@ -79,7 +79,7 @@ public class Hyi extends AbstractSpeaker {
         return false;
     }
 
-    private static String getHyi(char tmp) {
+    private String getHyi(char tmp) {
         String hu = HU;
 
         if (tmp == 'а' || tmp == 'я') {

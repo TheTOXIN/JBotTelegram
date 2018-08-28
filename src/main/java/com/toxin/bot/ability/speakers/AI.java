@@ -49,7 +49,6 @@ public class AI extends AbstractSpeaker {
     public List<String> getKeyWords() {
         return Arrays.asList(
             "бот",
-            "?",
             "эй"
         );
     }

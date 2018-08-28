@@ -1,12 +1,15 @@
 package com.toxin.bot.ability.features;
 
+import com.toxin.bot.basic.IDS;
 import com.toxin.bot.other.Util;
+import com.toxin.bot.transfer.FeatureTransf;
 import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Memator extends AbstractFeature {
@@ -22,6 +25,11 @@ public class Memator extends AbstractFeature {
     public static final Memator instance = new Memator();
 
     private Memator() {}
+
+    @Override
+    public void processTransf(FeatureTransf transf) {
+
+    }
 
     public static File getMem() {
         String path = SOURCE + "/new/" + Util.rand.nextInt(1000);
@@ -65,12 +73,14 @@ public class Memator extends AbstractFeature {
 
     @Override
     public List<String> getKeyWords() {
-        return null;
+        return Arrays.asList(
+            "мем"
+        );
     }
 
     @Override
     public String getId() {
-        return null;
+        return IDS.MEM;
     }
 
 }
