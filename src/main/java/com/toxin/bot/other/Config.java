@@ -12,6 +12,8 @@ public class Config {
     public static boolean PROXY_WORK;
     public static String PROXY_HOST;
     public static String PROXY_PORT;
+    public static String PROXY_LOGIN;
+    public static String PROXY_PASSWORD;
 
     public static void load() throws IOException {
         Properties propBot = new Properties();
@@ -25,6 +27,8 @@ public class Config {
             if (PROXY_WORK) {
                 PROXY_HOST = propBot.getProperty("proxy.host");
                 PROXY_PORT = propBot.getProperty("proxy.port");
+                PROXY_LOGIN = propBot.getProperty("proxy.login");
+                PROXY_PASSWORD = propBot.getProperty("proxy.password");
             }
         }
     }

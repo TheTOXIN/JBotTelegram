@@ -9,6 +9,8 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
 import java.io.IOException;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
 
 public class Initializer {
     private final Logger log = Logger.getLogger(Initializer.class);
@@ -36,8 +38,12 @@ public class Initializer {
         TelegramBotsApi botsApi = new TelegramBotsApi();
 
         try {
-            if (Config.PROXY_WORK) BOT = new Bot(getOptions());
-            else BOT = new Bot();
+            if (Config.PROXY_WORK) {
+                authenticate();
+                BOT = new Bot(getOptions());
+            } else {
+                BOT = new Bot();
+            }
             botsApi.registerBot(BOT);
         } catch (TelegramApiRequestException e) {
             log.error(BOT_NOT_REGISTER);
@@ -52,6 +58,18 @@ public class Initializer {
         options.setProxyType(DefaultBotOptions.ProxyType.SOCKS5);
 
         return options;
+    }
+
+    private void authenticate() {
+        Authenticator.setDefault(new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(
+                    Config.PROXY_LOGIN,
+                    Config.PROXY_PASSWORD.toCharArray()
+                );
+            }
+        });
     }
 
 }

@@ -333,3 +333,23 @@
 2018-08-08 18:34:26 INFO  Bot:73 - GETTER: ID=410253163 TEXT=/test
 2018-08-08 18:36:42 INFO  Bot:219 - BOT - ON in 410253163
 2018-08-08 18:36:44 INFO  Bot:70 - GETTER: ID=410253163 TEXT=/test
+2018-09-17 15:26:16 ERROR Initializer:43 - BOT NOT REGISTER
+2018-09-18 12:35:37 ERROR Initializer:43 - BOT NOT REGISTER
+2018-09-18 12:38:10 INFO  RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://api.telegram.org:443: SOCKS: Host unreachable
+2018-09-18 12:38:10 INFO  RetryExec:113 - Retrying request to {s}->https://api.telegram.org:443
+2018-09-18 12:38:24 INFO  RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://api.telegram.org:443: SOCKS: Host unreachable
+2018-09-18 12:38:24 INFO  RetryExec:113 - Retrying request to {s}->https://api.telegram.org:443
+2018-09-18 12:48:12 INFO  RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://api.telegram.org:443: SOCKS: Host unreachable
+2018-09-18 12:48:12 INFO  RetryExec:113 - Retrying request to {s}->https://api.telegram.org:443
+2018-09-18 12:48:26 INFO  RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://api.telegram.org:443: SOCKS: Host unreachable
+2018-09-18 12:48:26 INFO  RetryExec:113 - Retrying request to {s}->https://api.telegram.org:443
+2018-09-18 12:48:40 INFO  RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://api.telegram.org:443: SOCKS: Host unreachable
+2018-09-18 12:48:40 INFO  RetryExec:113 - Retrying request to {s}->https://api.telegram.org:443
+2018-09-18 12:48:54 ERROR Initializer:49 - BOT NOT REGISTER
+2018-09-19 13:28:59 INFO  RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://api.telegram.org:443: SOCKS: Host unreachable
+2018-09-19 13:28:59 INFO  RetryExec:113 - Retrying request to {s}->https://api.telegram.org:443
+2018-09-19 13:29:13 INFO  RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://api.telegram.org:443: SOCKS: Host unreachable
+2018-09-19 13:29:13 INFO  RetryExec:113 - Retrying request to {s}->https://api.telegram.org:443
+2018-09-19 13:29:27 INFO  RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {s}->https://api.telegram.org:443: SOCKS: Host unreachable
+2018-09-19 13:29:27 INFO  RetryExec:113 - Retrying request to {s}->https://api.telegram.org:443
+2018-09-19 13:29:36 ERROR Initializer:49 - BOT NOT REGISTER
