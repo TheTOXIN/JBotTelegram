@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.GetFile;
+import org.telegram.telegrambots.meta.api.methods.send.SendLocation;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.*;
@@ -11,6 +12,8 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
+
+import static com.toxin.bot.Config.BOT_NAME;
 
 public class Bot extends TelegramLongPollingBot {
 
@@ -48,10 +51,11 @@ public class Bot extends TelegramLongPollingBot {
 
     private void process(Message message) {
         String chatID = message.getChatId().toString();
-
-        if (processMock(chatID, message.getText())) return;
-
         String text = message.getText();
+
+        if (text != null ) text = text.replaceAll("@" + BOT_NAME, "");
+        if (processMock(chatID, text)) return;
+
         if (text != null && !text.isEmpty()) {
             log.info("GETTER: ID=" + chatID + " TEXT=" + text);
             processText(chatID, text);
@@ -89,6 +93,10 @@ public class Bot extends TelegramLongPollingBot {
             sendKeyboard(chatID, kn.processGame(text), kn.getKeyboard());
         } else if (text.contains(GameBC.KEY_WORD) || bc.isWork()) {
             sendMessage(chatID, this.bc.processGame(text));
+        } else if (text.contains("нападение") && text.contains("беларусь")) {
+            Belarus.Location locate = Belarus.getAttack();
+            sendLocation(chatID, locate.latitude, locate.longitude);
+            sendMessage(chatID, String.format("http://maps.google.com/maps?q=%s,%s", locate.latitude, locate.longitude));
         } else if (text.contains("/help")) {
             sendMessage(chatID, Info.getInfo());
         } else {
@@ -121,6 +129,16 @@ public class Bot extends TelegramLongPollingBot {
             execute(sendMessage);
         } catch (TelegramApiException e) {
             log.error(ErrorCode.MESSAGE_NOT_SEND);
+        }
+    }
+
+    private void sendLocation(String chatID, Double latitude, Double longitude) {
+        try {
+            execute(new SendLocation(
+                chatID, latitude, longitude
+            ));
+        } catch (TelegramApiException e) {
+            log.error(ErrorCode.LOCATION_NOT_SEND);
         }
     }
 
@@ -172,7 +190,7 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return Config.BOT_NAME;
+        return BOT_NAME;
     }
 
     @Override

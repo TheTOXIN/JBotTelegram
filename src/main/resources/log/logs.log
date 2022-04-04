@@ -145,3 +145,338 @@ java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because "t
 2022-04-04 21:07:59 INFO  Bot:56 - GETTER: ID=410253163 TEXT=Число = 5
 2022-04-04 21:08:04 INFO  Bot:56 - GETTER: ID=410253163 TEXT=STOP GAME
 2022-04-04 21:08:08 INFO  Bot:56 - GETTER: ID=410253163 TEXT=Ахахаха
+2022-04-04 21:16:51 INFO  Bot:166 - BOT - ON in 410253163
+2022-04-04 21:16:52 INFO  Bot:56 - GETTER: ID=410253163 TEXT=/help
+2022-04-04 21:16:56 INFO  Bot:56 - GETTER: ID=410253163 TEXT=/meme
+2022-04-04 21:16:56 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:17:31 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F5f7f8d10-363e-e93d-f1b1-a4485888a497?alt=media&token=44749625-5424-44ff-973f-69a831b1e25b name:mem.jpg - success download
+2022-04-04 21:17:31 INFO  Bot:56 - GETTER: ID=410253163 TEXT=Привет
+2022-04-04 21:21:58 INFO  Bot:166 - BOT - ON in -1001507674329
+2022-04-04 21:22:10 INFO  Bot:56 - GETTER: ID=-1001507674329 TEXT=О бля
+2022-04-04 21:28:08 INFO  Bot:169 - BOT - ON in -1001507674329
+2022-04-04 21:28:12 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Хай
+2022-04-04 21:28:15 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/help
+2022-04-04 21:28:18 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:28:18 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:28:19 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2Fe7dda48f-035c-4f7c-0e12-80ecfb5d3ed6?alt=media&token=20fb05ae-ebcb-4e9e-9c36-a0a29c024845 name:mem.jpg - success download
+2022-04-04 21:28:27 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/bc
+2022-04-04 21:28:38 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=1253
+2022-04-04 21:28:44 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/stopgame
+2022-04-04 21:28:53 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/knb
+2022-04-04 21:28:55 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=📄
+2022-04-04 21:28:57 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=✂️
+2022-04-04 21:28:58 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=🪨
+2022-04-04 21:29:00 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=✂️
+2022-04-04 21:29:01 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=USER - 0 : 2 - BOT
+2022-04-04 21:29:01 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-04 21:29:02 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=STOP GAME
+2022-04-04 21:29:02 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-04 21:29:09 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/kn
+2022-04-04 21:29:09 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-04 21:29:56 INFO  Bot:169 - BOT - ON in -1001507674329
+2022-04-04 21:30:07 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/kn
+2022-04-04 21:30:09 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=x:y=1:1
+2022-04-04 21:30:10 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=x:y=3:2
+2022-04-04 21:30:13 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=x:y=2:2
+2022-04-04 21:30:17 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=x:y=3:3
+2022-04-04 21:30:19 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=x:y=3:1
+2022-04-04 21:30:21 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=x:y=1:2
+2022-04-04 21:30:27 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=x:y=1:1
+2022-04-04 21:30:30 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=x:y=3:1
+2022-04-04 21:30:32 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=x:y=2:3
+2022-04-04 21:30:34 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=x:y=3:3
+2022-04-04 21:30:34 ERROR DefaultBotSession:322 - bound must be positive
+java.lang.IllegalArgumentException: bound must be positive
+	at java.base/java.util.Random.nextInt(Random.java:322)
+	at com.toxin.bot.GameKN.matrixSet(GameKN.java:175)
+	at com.toxin.bot.GameKN.checkGame(GameKN.java:65)
+	at com.toxin.bot.GameKN.processGame(GameKN.java:32)
+	at com.toxin.bot.Bot.processText(Bot.java:92)
+	at com.toxin.bot.Bot.process(Bot.java:60)
+	at com.toxin.bot.Bot.onUpdateReceived(Bot.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-04-04 21:30:41 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=stopgame
+2022-04-04 21:30:46 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/help
+2022-04-04 21:30:54 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:30:54 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:30:56 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F2a5fe4a6-7edd-75df-d9d9-8a97950a29ae?alt=media&token=dcff3197-6ae6-4b81-9547-ff4786d427d9 name:mem.jpg - success download
+2022-04-04 21:31:06 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:31:06 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:31:07 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2Fd7f2f094-07f0-10f5-98db-60374cd089c3?alt=media&token=c8aef482-93b6-43d4-bf58-f89707ecfa92 name:mem.jpg - success download
+2022-04-04 21:31:10 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:31:10 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:31:11 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2Fadef9614-ce33-73a1-933f-30c4effc6dbb?alt=media&token=503dfb50-3d55-4d12-a891-f5199d0e953c name:mem.jpg - success download
+2022-04-04 21:31:20 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Сча
+2022-04-04 21:31:29 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ты молчи хуйло
+2022-04-04 21:31:36 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Пидарас
+2022-04-04 21:31:40 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Артём
+2022-04-04 21:31:43 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Максик
+2022-04-04 21:32:28 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=https://github.com/TheTOXIN/JBotTelegram
+2022-04-04 21:32:43 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=@TheARTEMON
+2022-04-04 21:32:48 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Та завались ты
+2022-04-04 21:32:52 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Пидарас
+2022-04-04 21:33:23 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Как дила дон
+2022-04-04 21:33:29 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:33:29 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:33:31 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2Fe3926389-a921-d84d-b096-72c41291b857?alt=media&token=5ac41d84-1bcf-456b-a7e8-e5b2093a443c name:mem.jpg - success download
+2022-04-04 21:33:39 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Скинь мем
+2022-04-04 21:33:39 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:33:40 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F71e37585-18b1-4cef-748e-3f86ac83be61?alt=media&token=d051a99f-c277-4b25-bd8b-42005d50732c name:mem.jpg - success download
+2022-04-04 21:33:44 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ахахахах
+2022-04-04 21:34:07 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Блять
+2022-04-04 21:34:29 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Какова вероятность того что максик нацик
+2022-04-04 21:34:42 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Кто тут пидр?
+2022-04-04 21:36:06 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=О пасиб
+2022-04-04 21:36:10 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=За исходних
+2022-04-04 21:36:12 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Бля
+2022-04-04 21:36:12 ERROR DefaultBotSession:322 - String index out of range: 0
+java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:48)
+	at java.base/java.lang.String.charAt(String.java:1512)
+	at com.toxin.bot.Hyi.getHyiString(Hyi.java:29)
+	at com.toxin.bot.Bot.processText(Bot.java:98)
+	at com.toxin.bot.Bot.process(Bot.java:60)
+	at com.toxin.bot.Bot.onUpdateReceived(Bot.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-04-04 21:36:19 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Я когда своего запущу
+2022-04-04 21:36:22 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Нахуя они тебе
+2022-04-04 21:36:23 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Поцанского бота
+2022-04-04 21:36:26 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Пизда тебе
+2022-04-04 21:36:30 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Я там сам уже нихуя не понимаю
+2022-04-04 21:36:37 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:36:37 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:36:38 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2Fadef9614-ce33-73a1-933f-30c4effc6dbb?alt=media&token=503dfb50-3d55-4d12-a891-f5199d0e953c name:mem.jpg - success download
+2022-04-04 21:36:39 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Та прост поцекать хочут
+2022-04-04 21:36:48 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Бот как дела?
+2022-04-04 21:36:51 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ясно
+2022-04-04 21:36:54 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ясно
+2022-04-04 21:36:57 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ясно
+2022-04-04 21:37:00 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ахахахах
+2022-04-04 21:37:17 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Пахахахахаха
+2022-04-04 21:37:27 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ну ты и пидор
+2022-04-04 21:37:33 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Пизда тебе
+2022-04-04 21:37:36 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Жди
+2022-04-04 21:37:36 ERROR DefaultBotSession:322 - String index out of range: 0
+java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:48)
+	at java.base/java.lang.String.charAt(String.java:1512)
+	at com.toxin.bot.Hyi.getHyiString(Hyi.java:29)
+	at com.toxin.bot.Bot.processText(Bot.java:98)
+	at com.toxin.bot.Bot.process(Bot.java:60)
+	at com.toxin.bot.Bot.onUpdateReceived(Bot.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-04-04 21:37:46 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:37:46 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:37:47 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F5976447b-c381-5634-103d-a0790d073574?alt=media&token=20692daa-4503-4a4f-90a4-48f9b956efc6 name:mem.jpg - success download
+2022-04-04 21:37:53 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:37:53 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:37:54 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F27f1f901-faf2-082a-a51f-b4985ef1cd4f?alt=media&token=b50b29cc-819a-4b3e-9a80-6da51cf3c0bf name:mem.jpg - success download
+2022-04-04 21:38:00 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:38:00 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:38:01 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F78bdd07c-c5e3-4b29-5326-565bf94e7882?alt=media&token=0c897e85-e576-49fe-aa8e-4777e5df1a16 name:mem.jpg - success download
+2022-04-04 21:38:05 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:38:05 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:38:06 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2Fc6dffc9d-3a14-4551-88af-0e9c4cdeba85?alt=media&token=f96191ca-268c-4c9f-9ba6-f141b5260c5c name:mem.jpg - success download
+2022-04-04 21:38:09 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:38:09 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:38:10 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F71e94288-d731-f68d-1f2d-6c5f91a3a478?alt=media&token=a35c963e-4793-412b-b8f7-9cdf04bcb135 name:mem.jpg - success download
+2022-04-04 21:38:13 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Будет битва
+2022-04-04 21:38:16 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Питон бота
+2022-04-04 21:38:20 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Против джава бота
+2022-04-04 21:38:22 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Залупитва
+2022-04-04 21:38:34 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/help
+2022-04-04 21:38:39 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/mol
+2022-04-04 21:38:51 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 67
+2022-04-04 21:38:55 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 23
+2022-04-04 21:38:59 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 12
+2022-04-04 21:39:04 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 21
+2022-04-04 21:39:11 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 17
+2022-04-04 21:39:16 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 15
+2022-04-04 21:39:25 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=ща изи будет
+2022-04-04 21:39:25 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=stopgame
+2022-04-04 21:39:29 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/help
+2022-04-04 21:39:30 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ахахахах
+2022-04-04 21:39:34 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/mol
+2022-04-04 21:39:39 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=50
+2022-04-04 21:39:45 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Пиши Число =
+2022-04-04 21:39:46 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=нэпонял
+2022-04-04 21:39:59 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 50
+2022-04-04 21:40:04 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 25
+2022-04-04 21:40:13 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 12
+2022-04-04 21:40:20 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 13
+2022-04-04 21:40:31 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 15
+2022-04-04 21:40:39 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Бля
+2022-04-04 21:40:42 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Я тупанул
+2022-04-04 21:40:45 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ахахахахах
+2022-04-04 21:40:51 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число 20
+2022-04-04 21:40:59 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ясно
+2022-04-04 21:41:04 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 20
+2022-04-04 21:41:07 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 21
+2022-04-04 21:41:10 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 25
+2022-04-04 21:41:13 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 24
+2022-04-04 21:41:15 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 23
+2022-04-04 21:41:18 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ахахахаха
+2022-04-04 21:41:20 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Cerf)
+2022-04-04 21:41:37 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Вероятность того что Россия захватит Украину
+2022-04-04 21:41:41 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ахахаха
+2022-04-04 21:41:44 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Пахахахахахахахахаха
+2022-04-04 21:41:46 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=ОсУЖДАЮ
+2022-04-04 21:41:49 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Вероятность того что у меня будет панос
+2022-04-04 21:41:52 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Блять
+2022-04-04 21:42:21 INFO  Bot:72 - GETTER: ID=-1001507674329 PHOTO=null id=AgACAgIAAx0CWd1I2QACAR9iSzwLU80VITuawTYE9hNgzzLJfgACRLgxG3iWYUoeT9dB3_KCIwEAAwIAA3MAAyME
+2022-04-04 21:42:21 INFO  Util:26 - LOAD - url: https://api.telegram.org/file/bot535757742:AAFBG0at1BdGQhX6zPBy3C0aGUQed0SCRdw/photos/file_0.jpg name:render.png - success download
+2022-04-04 21:42:25 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ахахахаха
+2022-04-04 21:42:37 INFO  Bot:72 - GETTER: ID=-1001507674329 PHOTO=null id=AgACAgIAAx0CWd1I2QACASNiSzwbcTrCU4TRQmhu49-9beZWxwACRrgxG3iWYUr5N3mXEz_3SQEAAwIAA3MAAyME
+2022-04-04 21:42:37 INFO  Util:26 - LOAD - url: https://api.telegram.org/file/bot535757742:AAFBG0at1BdGQhX6zPBy3C0aGUQed0SCRdw/photos/file_1.jpg name:render.png - success download
+2022-04-04 21:42:55 INFO  Bot:72 - GETTER: ID=-1001507674329 PHOTO=null id=AgACAgIAAx0CWd1I2QACASViSzwuq0rT5TBMlAbXZREUAvloNwACSLgxG3iWYUqsEY1JGjWkRAEAAwIAA3MAAyME
+2022-04-04 21:42:56 INFO  Util:26 - LOAD - url: https://api.telegram.org/file/bot535757742:AAFBG0at1BdGQhX6zPBy3C0aGUQed0SCRdw/photos/file_2.jpg name:render.png - success download
+2022-04-04 21:43:01 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ахахахахаха
+2022-04-04 21:43:09 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:43:09 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:43:10 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F068b9cfd-aa53-1808-a255-ccd9562438c0?alt=media&token=07e58f2e-fb95-4404-9f8e-0de36dec05e7 name:mem.jpg - success download
+2022-04-04 21:43:12 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:43:12 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:43:13 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F05b1f6ec-12f5-d5cc-109a-37586a2bb6f2?alt=media&token=116304d8-3364-4893-a700-635db8643438 name:mem.jpg - success download
+2022-04-04 21:48:53 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Что тут блять было...
+2022-04-04 21:49:14 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Двести ебучих сообщений
+2022-04-04 21:49:27 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Юра гей
+2022-04-04 21:49:28 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Вероятность того что максика обасут
+2022-04-04 21:49:43 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:49:43 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:49:44 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F7599c3ac-edec-a7c4-5e26-67deec7222a4?alt=media&token=ef56a6e4-290b-4ac0-8c52-a1b0ea70863d name:mem.jpg - success download
+2022-04-04 21:49:52 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Вероятность того что у юры будет понос
+2022-04-04 21:49:55 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Вххвхвхввх
+2022-04-04 21:49:59 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Не понял
+2022-04-04 21:50:25 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/meme
+2022-04-04 21:50:25 INFO  Memator:21 - START DOWNLOAD RANDOM MEME
+2022-04-04 21:50:26 INFO  Util:26 - LOAD - url: https://firebasestorage.googleapis.com/v0/b/memastick-d525f.appspot.com/o/memes%2F51a02b8b-1aaf-6824-385f-4f20e4501371?alt=media&token=321595df-b315-423c-a66e-dd08b0e4af9a name:mem.jpg - success download
+2022-04-04 21:50:27 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Вероятность того что у юры случится взлом жопы
+2022-04-04 21:50:31 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Вхахвхвхвх
+2022-04-04 21:50:34 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Сука
+2022-04-04 21:50:36 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Пидарас
+2022-04-04 21:50:54 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Твоя система играет против тебя же
+2022-04-04 21:51:12 INFO  Bot:72 - GETTER: ID=-1001507674329 PHOTO=null id=AgACAgIAAx0CWd1I2QACAUliSz4f9jiKWE8XonVonUOQTk1tOQACVLgxG3iWYUoXjfY4FKg_mwEAAwIAA3MAAyME
+2022-04-04 21:51:13 INFO  Util:26 - LOAD - url: https://api.telegram.org/file/bot535757742:AAFBG0at1BdGQhX6zPBy3C0aGUQed0SCRdw/photos/file_3.jpg name:render.png - success download
+2022-04-04 21:51:19 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Вероятность того что у юры будет много денег
+2022-04-04 21:51:23 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Каво
+2022-04-04 21:51:24 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Нету
+2022-04-04 21:51:27 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Не дам
+2022-04-04 21:51:39 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Я вам в наследство оставлю только диарею
+2022-04-04 21:51:42 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=А  тебя их и нет
+2022-04-04 21:52:08 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Вероятность того что я у юры спизжу деньги
+2022-04-04 21:52:24 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=А, у тебя их нет, вот и не спизжу
+2022-04-04 21:52:55 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Ыр хур г
+2022-04-04 21:53:09 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Пиши с большой буквы, пидорасина
+2022-04-04 21:53:17 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=О, хорош
+2022-04-04 21:54:40 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/help
+2022-04-04 21:54:45 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/knb
+2022-04-04 21:54:51 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=📄
+2022-04-04 21:54:53 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=✂️
+2022-04-04 21:54:55 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=🪨
+2022-04-04 21:54:56 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=STOP GAME
+2022-04-04 21:54:56 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-04 21:55:55 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/mol
+2022-04-04 21:56:07 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 30
+2022-04-04 21:56:14 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 3
+2022-04-04 21:56:21 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 11
+2022-04-04 21:56:28 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 5
+2022-04-04 21:56:33 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 4
+2022-04-04 21:56:42 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Оп-оп нихуя
+2022-04-04 21:56:42 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-04 21:58:17 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/mol
+2022-04-04 21:58:26 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число 40
+2022-04-04 21:58:26 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-04 21:58:32 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Бля
+2022-04-04 21:58:32 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-04 21:58:36 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 40
+2022-04-04 21:58:45 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 50
+2022-04-04 21:58:51 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Нихуя ты крутой
+2022-04-04 21:58:51 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-04 21:58:57 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 70
+2022-04-04 21:59:03 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 63
+2022-04-04 21:59:12 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 65
+2022-04-04 21:59:19 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 67
+2022-04-04 21:59:24 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 66
+2022-04-04 21:59:29 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Сосать
+2022-04-04 21:59:29 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-04 22:00:12 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=/mol
+2022-04-04 22:00:21 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 30
+2022-04-04 22:00:26 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 20
+2022-04-04 22:00:38 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число равно 10
+2022-04-04 22:00:38 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-04 22:00:49 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 10
+2022-04-04 22:00:54 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 12
+2022-04-04 22:01:02 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 14
+2022-04-04 22:01:10 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Число = 16
+2022-04-04 22:02:21 INFO  Bot:59 - GETTER: ID=-1001507674329 TEXT=Какой у него разброс чисел, что может загадать?
+2022-04-04 22:02:21 ERROR Bot:154 - MESSAGE_NOT_SEND
+2022-04-05 00:09:03 INFO  Bot:185 - BOT - ON in -1001507674329
+2022-04-05 00:09:28 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Иди на хуй
+2022-04-05 00:09:43 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 00:10:24 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Чо бля
+2022-04-05 00:10:24 ERROR DefaultBotSession:322 - String index out of range: 0
+java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:48)
+	at java.base/java.lang.String.charAt(String.java:1512)
+	at com.toxin.bot.Hyi.getHyiString(Hyi.java:29)
+	at com.toxin.bot.Bot.processText(Bot.java:104)
+	at com.toxin.bot.Bot.process(Bot.java:61)
+	at com.toxin.bot.Bot.onUpdateReceived(Bot.java:46)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-04-05 00:10:29 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 00:10:37 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=/mol
+2022-04-05 00:10:39 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Шо
+2022-04-05 00:10:46 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Пошел нахуй
+2022-04-05 00:10:47 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Печ
+2022-04-05 00:10:50 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 30
+2022-04-05 00:10:57 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число 60
+2022-04-05 00:11:04 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 4ъ
+2022-04-05 00:11:04 ERROR DefaultBotSession:322 - For input string: "4ъ"
+java.lang.NumberFormatException: For input string: "4ъ"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at com.toxin.bot.GameMOL.processGame(GameMOL.java:18)
+	at com.toxin.bot.Bot.processText(Bot.java:89)
+	at com.toxin.bot.Bot.process(Bot.java:61)
+	at com.toxin.bot.Bot.onUpdateReceived(Bot.java:46)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-04-05 00:11:06 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 60
+2022-04-05 00:11:13 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 40
+2022-04-05 00:11:19 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 55
+2022-04-05 00:11:24 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 50
+2022-04-05 00:11:25 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 53
+2022-04-05 00:11:36 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 46
+2022-04-05 00:11:36 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 46
+2022-04-05 00:11:40 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Пхахаххаха
+2022-04-05 00:11:41 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Ебать
+2022-04-05 00:11:43 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Вхахвх
+2022-04-05 00:11:52 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 48
+2022-04-05 00:11:59 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Число = 49
+2022-04-05 00:12:32 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 00:12:45 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Та ты заебал
+2022-04-05 00:13:03 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Проебали
+2022-04-05 00:13:42 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 00:13:54 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 00:13:58 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 00:14:07 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Ахахах
+2022-04-05 00:14:09 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Попал
+2022-04-05 00:15:06 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Вероятность того что у юра сегодня обосрется
+2022-04-05 00:15:13 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Повезло, получается
+2022-04-05 00:21:20 INFO  Bot:204 - BOT - ON in 410253163
+2022-04-05 00:21:23 INFO  Bot:61 - GETTER: ID=410253163 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 00:21:33 INFO  Bot:61 - GETTER: ID=410253163 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 00:21:44 INFO  Bot:61 - GETTER: ID=410253163 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 00:30:25 INFO  Bot:185 - BOT - ON in 410253163
+2022-04-05 00:30:32 INFO  Bot:61 - GETTER: ID=410253163 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 00:30:45 INFO  Bot:61 - GETTER: ID=410253163 TEXT=Покажи откуда готовилось нападение на Беларусь
