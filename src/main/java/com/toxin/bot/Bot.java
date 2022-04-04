@@ -93,6 +93,8 @@ public class Bot extends TelegramLongPollingBot {
             sendKeyboard(chatID, kn.processGame(text), kn.getKeyboard());
         } else if (text.contains(GameBC.KEY_WORD) || bc.isWork()) {
             sendMessage(chatID, this.bc.processGame(text));
+        } else if (text.startsWith("покажи")) {
+            sendMessage(chatID, Gif.randomGif(text));
         } else if (text.contains("нападение") && text.contains("беларусь")) {
             Belarus.Location locate = Belarus.getAttack();
             sendLocation(chatID, locate.latitude, locate.longitude);

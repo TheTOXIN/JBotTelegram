@@ -480,3 +480,36 @@ java.lang.NumberFormatException: For input string: "4ъ"
 2022-04-05 00:30:25 INFO  Bot:185 - BOT - ON in 410253163
 2022-04-05 00:30:32 INFO  Bot:61 - GETTER: ID=410253163 TEXT=Покажи откуда готовилось нападение на Беларусь
 2022-04-05 00:30:45 INFO  Bot:61 - GETTER: ID=410253163 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 01:28:40 INFO  Bot:184 - BOT - ON in -1001507674329
+2022-04-05 01:29:04 INFO  Bot:60 - GETTER: ID=-1001507674329 TEXT=Покажи откуда готовилось нападение на Беларусь
+2022-04-05 02:10:21 INFO  Bot:186 - BOT - ON in 410253163
+2022-04-05 02:10:25 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи cat
+2022-04-05 02:10:41 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи shit
+2022-04-05 02:10:54 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи ukraine
+2022-04-05 02:11:00 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи ukraine
+2022-04-05 02:11:52 INFO  Bot:186 - BOT - ON in 410253163
+2022-04-05 02:11:59 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи ukraine
+2022-04-05 02:12:02 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи ukraine
+2022-04-05 02:12:05 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи ukraine
+2022-04-05 02:15:25 INFO  Bot:186 - BOT - ON in 410253163
+2022-04-05 02:15:28 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи ukraine
+2022-04-05 02:15:29 INFO  Util:26 - LOAD - url: https://media2.giphy.com/media/JXatkwpBn3QYcFyJL8/giphy-preview.gif?cid=4e552fdd420b5e6f975e16ba3c517e36e2fe38f2cf62fe8d&rid=giphy-preview.gif&ct=g name:tmp.gif - success download
+2022-04-05 02:15:29 ERROR Bot:157 - PHOTO_NOT_SEND
+2022-04-05 02:17:37 INFO  Bot:186 - BOT - ON in 410253163
+2022-04-05 02:17:41 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи ukraine
+2022-04-05 02:18:06 INFO  Util:26 - LOAD - url: https://media0.giphy.com/media/TEy1GvHoGcuO7s7ago/giphy-preview.gif?cid=4e552fdd71590c92792eb739d04cd4193540b1fd23ab5698&rid=giphy-preview.gif&ct=g name:tmp.gif - success download
+2022-04-05 02:18:06 ERROR Bot:157 - PHOTO_NOT_SEND
+2022-04-05 02:19:34 INFO  Bot:186 - BOT - ON in 410253163
+2022-04-05 02:19:42 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи ukraine
+2022-04-05 02:19:43 INFO  Util:27 - LOAD - url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rotating_earth_%28large%29.gif/274px-Rotating_earth_%28large%29.gif name:tmp.gif - success download
+2022-04-05 02:26:43 INFO  Bot:186 - BOT - ON in 410253163
+2022-04-05 02:26:48 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи cat
+2022-04-05 02:26:49 INFO  Util:26 - LOAD - url: https://media4.giphy.com/media/zFLWaaCMjp5RK/giphy-preview.gif?cid=4e552fdd573d2d33d65e2019e8bba197b93f88e3ef693e48&rid=giphy-preview.gif&ct=g name:tmp.gif - success download
+2022-04-05 02:26:49 ERROR Bot:157 - PHOTO_NOT_SEND
+2022-04-05 02:27:51 INFO  Bot:186 - BOT - ON in 410253163
+2022-04-05 02:28:15 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи cat
+2022-04-05 02:28:16 INFO  Util:26 - LOAD - url: https://media2.giphy.com/media/118A3TUPCSiw6Y/giphy.gif?cid=4e552fdd37622bf39b5c9f3bf06541955c9e6ee2d60479db&rid=giphy.gif&ct=g name:tmp.gif - success download
+2022-04-05 02:28:16 ERROR Bot:157 - PHOTO_NOT_SEND
+2022-04-05 02:29:17 INFO  Util:26 - LOAD - url: https://media2.giphy.com/media/118A3TUPCSiw6Y/giphy.gif?cid=4e552fdd37622bf39b5c9f3bf06541955c9e6ee2d60479db&rid=giphy.gif&ct=g name:test.gif - success download
+2022-04-05 02:31:40 INFO  Bot:186 - BOT - ON in 410253163
+2022-04-05 02:31:42 INFO  Bot:60 - GETTER: ID=410253163 TEXT=покажи cat
