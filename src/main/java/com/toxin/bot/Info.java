@@ -4,7 +4,7 @@ public class Info {
 
     private final static StringBuilder sb = new StringBuilder()
             .append("Хувствуйсте, я - БотХуиБот ")
-            .append(Emoji.ROCK.toString())
+            .append(Emoji.MOON)
             .append("\nВот чё я умею:")
             .append("\n= Подержить разговор")
             .append("\n= Обрабатывать фотки")
@@ -14,11 +14,10 @@ public class Info {
             .append("\n= Играть в 'Быки и коровы' - /" + GameBC.KEY_WORD)
             .append("\n= Сделать тебя в 'Крестики-Нолики' - /" + GameKN.KEY_WORD)
             .append("\n= Камень ножницы бумага - /" + GameKNB.KEY_WORD)
-            .append("\n(Остановить игру - /" + Consts.STOP_GAME + ")")
+            .append("\nОстановить игру - /" + Consts.STOP_GAME)
             .append("\nМой папочка - " + Consts.CREATOR);
 
     public static String getInfo() {
         return sb.toString();
     }
-
 }

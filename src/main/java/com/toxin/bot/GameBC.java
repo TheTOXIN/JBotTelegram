@@ -38,7 +38,7 @@ public class GameBC {
     }
 
     private String stopGame() {
-        String res = "У тебя ушло попыток" + this.counter + "\nБывало и хуже...";
+        String res = "У тебя ушло попыток " + this.counter + "\nБывало и хуже...";
 
         this.work = false;
         this.counter = 0;

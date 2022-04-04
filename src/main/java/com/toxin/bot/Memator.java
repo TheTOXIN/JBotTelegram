@@ -3,58 +3,35 @@ package com.toxin.bot;
 import org.apache.log4j.Logger;
 
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 public class Memator {
 
-    public static final String KEY_WORD = "mem";
+    public static final String KEY_WORD = "meme";
 
-    private static final String SOURCE = "http://www.1001mem.ru";
-    private static final String KEY_WORDS = "img.1001mem.ru/posts/";
+    private static final String MEME_API = "https://memastick-back.herokuapp.com/memes/random";
     private static final String NAME = "mem.jpg";
 
     private static final Logger log = Logger.getLogger(Memator.class);
 
     public static File getMem() {
-        String path = SOURCE + "/new/" + Util.rand.nextInt(1000);
-        String link;
-        String parse;
+        log.info("START DOWNLOAD RANDOM MEME");
 
         try {
-            URL url = new URL(path);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder(URI.create(MEME_API)).GET().build();
 
-            connection.connect();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            String url = response.body();
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            ArrayList<String> links = new ArrayList<>();
-
-            while (reader.ready()) {
-                parse = reader.readLine();
-                if (parse.contains(KEY_WORDS)) {
-                    links.add(parse);
-                }
-            }
-
-            link = parseToLink(links.get(Util.rand.nextInt(links.size())));
-            Util.downloadImage(link, NAME);
-
-            connection.disconnect();
-            reader.close();
-        } catch (IOException e) {
-            log.error("URL - " + path + " : error http connection");
+            Util.downloadImage(url, NAME);
+        } catch (Exception ex) {
+            log.error("ERROR DOWNLOAD RANDOM MEME");
         }
 
         return new File(Util.RES + NAME);
     }
-
-    private static String parseToLink(String str) {
-        int from = str.indexOf('\"') + 1;
-        int to = str.indexOf('\"', from);
-
-        return str.substring(from, to);
-    }
-
 }

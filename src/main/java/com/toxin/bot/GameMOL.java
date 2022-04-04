@@ -14,7 +14,7 @@ public class GameMOL {
     public String processGame(String text) {
         String answer = "";
 
-        if (text.contains(KEY_WORD_START)) answer = startGame();
+        if (text.contains(KEY_WORD_START) || text.contains(KEY_WORD)) answer = startGame();
         if (text.contains(KEY_WORD_ANSWER)) answer = checkGame(Integer.parseInt(text.split("=")[1].trim()));
 
         return answer;
@@ -50,5 +50,4 @@ public class GameMOL {
 
         return res;
     }
-
 }

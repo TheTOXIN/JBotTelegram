@@ -19,13 +19,12 @@ public class Util {
 
     public static void downloadImage(String url, String name) {
         try {
-
             String path = RES + name;
             Files.deleteIfExists(Paths.get(path));
             try(InputStream in = new URL(url).openStream()) {
                 Files.copy(in, Paths.get(path));
+                log.info("LOAD - url: " + url + " name:" + name + " - success download");
             }
-
         } catch (IOException e) {
             log.error("LOAD - url: " + url + " name:" + name + " - error download");
         }

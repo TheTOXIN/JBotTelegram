@@ -52,7 +52,7 @@ public class Hyi {
     }
 
     private static String deleteFirst(String str) {
-        return str.substring(1, str.length());
+        return str.substring(1);
     }
 
     private static boolean isGlas(char c) {

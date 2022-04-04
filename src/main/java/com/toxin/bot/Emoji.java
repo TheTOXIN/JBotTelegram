@@ -1,7 +1,8 @@
 package com.toxin.bot;
 
 public enum Emoji {
-    ROCK('\uD83C', '\uDF1A'),
+    MOON('\uD83C', '\uDF1A'),
+    ROCK('\uD83E', '\uDEA8'),
     SCISSORS('\u2702', '\uFE0F'),
     PAPER('\uD83D', '\uDCC4'),
     KRESTIK(null, '\u274C'),
@@ -43,5 +44,4 @@ public enum Emoji {
 
         return NULL;
     }
-
 }

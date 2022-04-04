@@ -12,7 +12,8 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
 
-public class Bot extends TelegramLongPollingBot { //TODO MVC???
+public class Bot extends TelegramLongPollingBot {
+
     private static final Logger log = Logger.getLogger(Bot.class);
 
     private Settings set;
@@ -22,10 +23,6 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
     private GameKNB knb;
     private GameKN kn;
     private GameBC bc;
-
-    public Bot() {
-        init();
-    }
 
     public Bot(DefaultBotOptions options) {
         super(options);
@@ -55,7 +52,7 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
         if (processMock(chatID, message.getText())) return;
 
         String text = message.getText();
-        if (text != null && !text.equals("") && !text.isEmpty()) {
+        if (text != null && !text.isEmpty()) {
             log.info("GETTER: ID=" + chatID + " TEXT=" + text);
             processText(chatID, text);
         }
@@ -102,7 +99,8 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
 
     private void processFile(String chatID, String fileId) {
         try {
-            GetFile getFile = new GetFile().setFileId(fileId);
+            GetFile getFile = new GetFile();
+            getFile.setFileId(fileId);
             File file = execute(getFile);
             Util.downloadImage(file.getFileUrl(getBotToken()), Render.NAME);
             java.io.File render = Render.render(Util.RES + Render.NAME);
@@ -128,9 +126,10 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
 
     private void sendPhoto(String chatID, java.io.File file) {
         SendPhoto sendPhoto = new SendPhoto();
+        InputFile inputFile = new InputFile(file);
 
         sendPhoto.setChatId(chatID);
-        sendPhoto.setPhoto(file);
+        sendPhoto.setPhoto(inputFile);
 
         try {
             execute(sendPhoto);
@@ -154,6 +153,8 @@ public class Bot extends TelegramLongPollingBot { //TODO MVC???
     }
 
     private boolean processMock(String chatID, String text) {
+        if (text == null) return false;
+
         if (text.equals(Consts.OFF_BOT)) {
             set.removeChat(chatID);
             sendMessage(chatID, "Еще увидимся...");
